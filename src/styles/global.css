@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Roboto:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -7,15 +7,20 @@
 }
 
 :root {
-  --blue: #007FFF;
-  --cream: #FFFDD0;
-  --black: #0a0a0a;
-  --dark-gray: #1a1a1a;
-  --mid-gray: #333;
-  --light-gray: #666;
-  --white: #fff;
-  --font-display: 'Montserrat', sans-serif;
-  --font-body: 'Roboto', sans-serif;
+  --blue: #4DAAED;
+  --blue-dark: #1a7fc1;
+  --tape-bg: #e8dfc4;    /* yellowed masking tape color */
+  --tape-text: #4DAAED;  /* blue text on tape */
+  --white: #ffffff;
+  --black: #111111;
+  --body-bg: #ffffff;
+  --text: #1a1a1a;
+  --text-muted: #555555;
+  --text-light: #888888;
+  --border: #e8e8e8;
+  --section-alt: #f7f7f7;
+  --footer-bg: #111111;
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 html {
@@ -24,15 +29,15 @@ html {
 }
 
 body {
-  background: var(--black);
-  color: var(--white);
-  font-family: var(--font-body);
+  background: var(--body-bg);
+  color: var(--text);
+  font-family: var(--font);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 
 a {
-  color: var(--blue);
+  color: var(--blue-dark);
   text-decoration: none;
 }
 
@@ -46,35 +51,35 @@ img {
   display: block;
 }
 
-/* Tape element — the NON-NEGOTIABLE brand element */
+/* ─── TAPE ELEMENT ─────────────────────────────────────────── */
 .tape-label {
   display: inline-block;
-  background: var(--cream);
-  color: var(--blue);
-  font-family: var(--font-display);
+  background: var(--tape-bg);
+  color: var(--tape-text);
+  font-family: var(--font);
   font-weight: 900;
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
-  padding: 0.25em 0.75em;
+  font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+  padding: 0.2em 0.9em 0.3em;
   position: relative;
-  transform: rotate(-1deg);
-  line-height: 1.2;
-  letter-spacing: -0.02em;
+  transform: rotate(-1.5deg);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  clip-path: polygon(
+    0% 8%, 2% 0%, 5% 6%, 8% 1%, 12% 7%, 16% 0%, 20% 5%,
+    25% 1%, 30% 6%, 35% 0%, 40% 5%, 45% 1%, 50% 6%,
+    55% 0%, 60% 5%, 65% 1%, 70% 6%, 75% 0%, 80% 5%,
+    85% 1%, 90% 6%, 95% 0%, 100% 5%,
+    100% 92%, 98% 100%, 95% 94%, 91% 100%, 87% 94%,
+    83% 100%, 79% 95%, 75% 100%, 71% 94%, 67% 100%,
+    63% 95%, 59% 100%, 55% 94%, 51% 100%, 47% 95%,
+    43% 100%, 39% 94%, 35% 100%, 31% 95%, 27% 100%,
+    23% 94%, 19% 100%, 15% 95%, 11% 100%, 7% 94%,
+    3% 100%, 0% 92%
+  );
+  box-shadow: 2px 3px 8px rgba(0,0,0,0.12);
 }
 
-.tape-label::before,
-.tape-label::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  width: 18px;
-  height: 100%;
-  background: rgba(200, 200, 180, 0.5);
-}
-
-.tape-label::before { left: -10px; transform: skewY(2deg); }
-.tape-label::after  { right: -10px; transform: skewY(-2deg); }
-
-/* Section utilities */
+/* ─── LAYOUT ───────────────────────────────────────────────── */
 .container {
   max-width: 1100px;
   margin: 0 auto;
@@ -85,81 +90,125 @@ img {
   padding: 4rem 0;
 }
 
-.section--dark {
-  background: var(--dark-gray);
+.section--alt {
+  background: var(--section-alt);
 }
 
-.section--cream {
-  background: var(--cream);
+/* ─── TYPOGRAPHY ───────────────────────────────────────────── */
+h1, h2, h3, h4 {
+  font-family: var(--font);
+  font-weight: 800;
+  line-height: 1.2;
   color: var(--black);
 }
 
-/* Headings */
-h1, h2, h3, h4 {
-  font-family: var(--font-display);
-  font-weight: 700;
-  line-height: 1.15;
+h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); }
+h2 { font-size: clamp(1.3rem, 2.5vw, 1.8rem); }
+h3 { font-size: 1.1rem; font-weight: 700; }
+
+p {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.7;
 }
 
-/* Card grid */
+/* ─── SECTION HEADING ──────────────────────────────────────── */
+.section-heading {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-light);
+  margin-bottom: 1.25rem;
+  display: block;
+}
+
+/* ─── CARDS ────────────────────────────────────────────────── */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
+  gap: 1.25rem;
 }
 
 .card {
-  background: var(--dark-gray);
-  border: 1px solid var(--mid-gray);
-  border-radius: 6px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
   padding: 1.5rem;
-  transition: border-color 0.2s;
+  transition: box-shadow 0.2s, border-color 0.2s;
 }
 
 .card:hover {
   border-color: var(--blue);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
   text-decoration: none;
 }
 
 .card h3 {
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
-  color: var(--white);
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  color: var(--black);
 }
 
 .card p {
-  font-size: 0.9rem;
-  color: #aaa;
-  line-height: 1.5;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.6;
 }
 
-.card .tag {
+.tag {
   display: inline-block;
-  font-size: 0.7rem;
-  font-family: var(--font-display);
+  font-size: 0.65rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--blue);
-  margin-bottom: 0.5rem;
+  letter-spacing: 0.1em;
+  color: var(--blue-dark);
+  background: rgba(77,170,237,0.1);
+  padding: 0.2em 0.55em;
+  border-radius: 3px;
+  margin-bottom: 0.6rem;
 }
 
-/* Blue dot accent */
-.blue-dot {
+/* ─── BUTTONS ──────────────────────────────────────────────── */
+.btn {
   display: inline-block;
-  width: 8px;
-  height: 8px;
   background: var(--blue);
-  border-radius: 50%;
-  margin-right: 0.4em;
-  vertical-align: middle;
+  color: var(--white);
+  font-family: var(--font);
+  font-weight: 700;
+  font-size: 0.875rem;
+  padding: 0.65em 1.5em;
+  border-radius: 6px;
+  letter-spacing: 0.02em;
+  transition: background 0.2s;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
 }
 
-/* CTA block */
+.btn:hover {
+  background: var(--blue-dark);
+  text-decoration: none;
+  color: var(--white);
+}
+
+.btn--outline {
+  background: transparent;
+  border: 2px solid var(--blue-dark);
+  color: var(--blue-dark);
+}
+
+.btn--outline:hover {
+  background: var(--blue-dark);
+  color: var(--white);
+}
+
+/* ─── CTA BLOCK ────────────────────────────────────────────── */
 .cta-block {
-  background: var(--dark-gray);
-  border: 2px solid var(--blue);
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--blue);
   border-radius: 8px;
   padding: 2.5rem 2rem;
   text-align: center;
@@ -167,133 +216,131 @@ h1, h2, h3, h4 {
 }
 
 .cta-block h2 {
-  font-size: clamp(1.3rem, 3vw, 2rem);
+  font-size: clamp(1.15rem, 2.5vw, 1.6rem);
   margin-bottom: 0.75rem;
 }
 
 .cta-block p {
-  color: #aaa;
+  color: var(--text-muted);
   margin-bottom: 1.5rem;
-  max-width: 520px;
+  max-width: 500px;
   margin-left: auto;
   margin-right: auto;
-}
-
-.btn {
-  display: inline-block;
-  background: var(--blue);
-  color: var(--white);
-  font-family: var(--font-display);
-  font-weight: 700;
   font-size: 0.95rem;
-  padding: 0.75em 1.75em;
-  border-radius: 4px;
-  letter-spacing: 0.03em;
-  transition: opacity 0.2s;
-  border: none;
-  cursor: pointer;
 }
 
-.btn:hover {
-  opacity: 0.85;
-  text-decoration: none;
-}
-
-.btn--outline {
-  background: transparent;
-  border: 2px solid var(--blue);
-  color: var(--blue);
-}
-
-/* Breadcrumb */
+/* ─── BREADCRUMB ───────────────────────────────────────────── */
 .breadcrumb {
-  font-size: 0.8rem;
-  color: var(--light-gray);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-light);
   margin-bottom: 1.5rem;
 }
 
 .breadcrumb a {
-  color: var(--light-gray);
+  color: var(--text-light);
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  color: var(--blue-dark);
 }
 
 .breadcrumb span {
   margin: 0 0.4em;
 }
 
-/* Prose content */
+/* ─── PROSE ────────────────────────────────────────────────── */
 .prose {
   max-width: 720px;
 }
 
 .prose h2 {
-  font-size: 1.5rem;
-  margin: 2rem 0 0.75rem;
-  color: var(--blue);
+  font-size: 1.4rem;
+  margin: 2.5rem 0 0.75rem;
+  color: var(--black);
+  font-weight: 800;
 }
 
 .prose h3 {
-  font-size: 1.15rem;
-  margin: 1.5rem 0 0.5rem;
+  font-size: 1.05rem;
+  margin: 1.75rem 0 0.5rem;
+  color: var(--black);
+  font-weight: 700;
 }
 
 .prose p {
-  margin-bottom: 1rem;
-  color: #ccc;
+  margin-bottom: 1.1rem;
+  color: var(--text-muted);
+  font-size: 1rem;
 }
 
 .prose ul, .prose ol {
   padding-left: 1.5rem;
-  margin-bottom: 1rem;
-  color: #ccc;
+  margin-bottom: 1.1rem;
+  color: var(--text-muted);
 }
 
 .prose li {
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
 }
 
 .prose strong {
-  color: var(--white);
+  color: var(--black);
+  font-weight: 700;
 }
 
 .prose a {
-  color: var(--blue);
+  color: var(--blue-dark);
   text-decoration: underline;
 }
 
-/* Comparison table */
+/* ─── COMPARISON TABLE ─────────────────────────────────────── */
 .compare-table {
   width: 100%;
   border-collapse: collapse;
-  margin: 2rem 0;
-  font-size: 0.9rem;
+  margin: 1.5rem 0 2rem;
+  font-size: 0.875rem;
+  background: var(--white);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
 }
 
 .compare-table th {
-  background: var(--mid-gray);
+  background: var(--black);
   color: var(--white);
-  font-family: var(--font-display);
   font-weight: 700;
+  font-size: 0.78rem;
   padding: 0.75rem 1rem;
   text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
 }
 
 .compare-table td {
-  border-bottom: 1px solid var(--mid-gray);
+  border-bottom: 1px solid var(--border);
   padding: 0.65rem 1rem;
-  color: #ccc;
+  color: var(--text-muted);
   vertical-align: top;
+  line-height: 1.5;
 }
 
 .compare-table tr:nth-child(even) td {
-  background: rgba(255,255,255,0.02);
+  background: var(--section-alt);
+}
+
+.compare-table tr:last-child td {
+  border-bottom: none;
 }
 
 .compare-table .winner {
-  color: var(--blue);
-  font-weight: 500;
+  color: var(--blue-dark);
+  font-weight: 600;
 }
 
-/* Responsive */
+/* ─── RESPONSIVE ───────────────────────────────────────────── */
 @media (max-width: 640px) {
   .section {
     padding: 2.5rem 0;

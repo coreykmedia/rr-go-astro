@@ -41,14 +41,14 @@ const featured = [
     title: 'Beehiiv vs. Substack',
     desc: 'Which newsletter platform is actually worth your time? We break down pricing, features, and who each one is really built for.',
     href: '/compare/beehiiv-vs-substack/',
-    cta: 'Read the comparison →',
+    cta: 'Read the comparison &rarr;',
   },
   {
     tag: 'Guide',
     title: 'Move Your Audience to a Newsletter',
     desc: "You've built a following on a platform you don't own. Here's the step-by-step playbook to move them to email — without losing momentum.",
     href: '/guides/move-your-audience-to-a-newsletter/',
-    cta: 'Read the guide →',
+    cta: 'Read the guide &rarr;',
   },
 ];
 ---
@@ -59,14 +59,14 @@ const featured = [
   schema={schema}
 >
   <!-- Hero -->
-  <section class="hero section">
-    <div class="container">
+  <section class="hero">
+    <div class="container hero-container">
       <div class="hero-inner">
         <div class="tape-label hero-tape">Your audience isn't yours.</div>
-        <p class="hero-sub">Not until you own the list.</p>
+        <h1 class="hero-headline">Not until you own the list.</h1>
         <p class="hero-body">
           You've put years into building a following on platforms that can change the rules tomorrow.
-          This site is about fixing that — with honest tools, real comparisons, and guides that skip the hype.
+          This site is about fixing that — honest tools, real comparisons, and guides that skip the hype.
         </p>
         <div class="hero-actions">
           <a href="/resources/" class="btn">Browse Resources</a>
@@ -80,18 +80,19 @@ const featured = [
           </a>
         </div>
       </div>
+      <div class="hero-img">
+        <img src="/logo-full.png" alt="Redefining Retirement" />
+      </div>
     </div>
   </section>
 
   <!-- Topics -->
-  <section class="section section--dark">
+  <section class="section section--alt">
     <div class="container">
-      <h2 class="section-heading">
-        <span class="blue-dot"></span>Topics
-      </h2>
+      <span class="section-heading">Topics</span>
       <div class="card-grid">
         {topics.map(({ tag, title, desc, href }) => (
-          <a href={href} class="card card--topic">
+          <a href={href} class="card card--link">
             <span class="tag">{tag}</span>
             <h3>{title}</h3>
             <p>{desc}</p>
@@ -102,19 +103,17 @@ const featured = [
     </div>
   </section>
 
-  <!-- Featured content -->
+  <!-- Start Here -->
   <section class="section">
     <div class="container">
-      <h2 class="section-heading">
-        <span class="blue-dot"></span>Start Here
-      </h2>
-      <div class="card-grid card-grid--featured">
+      <span class="section-heading">Start Here</span>
+      <div class="card-grid">
         {featured.map(({ tag, title, desc, href, cta }) => (
-          <a href={href} class="card card--featured">
+          <a href={href} class="card card--link">
             <span class="tag">{tag}</span>
             <h3>{title}</h3>
             <p>{desc}</p>
-            <span class="card-link">{cta}</span>
+            <span class="card-link" set:html={cta} />
           </a>
         ))}
       </div>
@@ -122,10 +121,10 @@ const featured = [
   </section>
 
   <!-- Newsletter CTA -->
-  <section class="section">
+  <section class="section section--alt">
     <div class="container">
       <div class="cta-block">
-        <div class="tape-label" style="font-size:1.1rem; margin-bottom:1rem; display:inline-block;">Gen eXit Playbook</div>
+        <div class="tape-label cta-tape">Gen eXit Playbook</div>
         <h2>Build income that doesn't depend on the algorithm</h2>
         <p>
           The Redefining Retirement newsletter covers how Gen X creators and solopreneurs
@@ -134,7 +133,7 @@ const featured = [
         </p>
         <a
           href="https://redefiningretirement.io/#subscribe"
-          class="btn"
+          class="btn btn-round"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -144,66 +143,63 @@ const featured = [
       </div>
     </div>
   </section>
-
-  <!-- Back to main site -->
-  <div class="back-to-main">
-    <div class="container">
-      <p>
-        A resource hub by
-        <a href="https://redefiningretirement.io" target="_blank" rel="noopener noreferrer">RedefiningRetirement.io</a>
-        &mdash; for Gen X creators building financial independence on their own terms.
-      </p>
-    </div>
-  </div>
 </Layout>
 
 <style>
   .hero {
-    padding: 5rem 0 4rem;
+    background: var(--white);
+    padding: 4rem 0 3rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-container {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
   }
 
   .hero-inner {
-    max-width: 680px;
+    flex: 1;
   }
 
   .hero-tape {
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
+    display: inline-block;
   }
 
-  .hero-sub {
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
-    color: var(--white);
-    margin-bottom: 1.25rem;
+  .hero-headline {
+    font-size: clamp(2rem, 4.5vw, 2.8rem);
+    font-weight: 900;
+    color: var(--black);
+    margin-bottom: 1rem;
     line-height: 1.1;
   }
 
   .hero-body {
-    color: #bbb;
-    font-size: 1.05rem;
+    color: var(--text-muted);
+    font-size: 1rem;
     margin-bottom: 2rem;
-    max-width: 560px;
-    line-height: 1.65;
+    line-height: 1.7;
+    max-width: 520px;
   }
 
   .hero-actions {
     display: flex;
-    gap: 1rem;
+    gap: 0.75rem;
     flex-wrap: wrap;
   }
 
-  .section-heading {
-    font-size: 1.3rem;
-    color: var(--white);
-    margin-bottom: 0;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+  .hero-img {
+    flex-shrink: 0;
+    width: 260px;
   }
 
-  .card--topic,
-  .card--featured {
+  .hero-img img {
+    width: 100%;
+    height: auto;
+  }
+
+  .card--link {
     display: block;
     text-decoration: none;
     color: inherit;
@@ -212,37 +208,35 @@ const featured = [
   .card-link {
     display: inline-block;
     margin-top: 0.75rem;
-    font-size: 0.85rem;
-    color: var(--blue);
-    font-family: var(--font-display);
+    font-size: 0.82rem;
     font-weight: 700;
+    color: var(--blue-dark);
   }
 
-  .card-grid--featured {
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  .cta-tape {
+    font-size: 1rem !important;
+    margin-bottom: 1rem;
+    display: inline-block;
   }
 
   .cta-footnote {
     margin-top: 0.75rem;
     font-size: 0.8rem;
-    color: #666;
+    color: var(--text-light);
   }
 
-  .back-to-main {
-    background: #0d0d0d;
-    border-top: 1px solid #1a1a1a;
-    padding: 1rem 0;
-    text-align: center;
-    margin-top: -4rem;
+  .btn-round {
+    border-radius: 20px;
   }
 
-  .back-to-main p {
-    color: #555;
-    font-size: 0.82rem;
-  }
-
-  .back-to-main a {
-    color: #777;
-    text-decoration: underline;
+  @media (max-width: 768px) {
+    .hero-container {
+      flex-direction: column-reverse;
+      gap: 2rem;
+    }
+    .hero-img {
+      width: 180px;
+      align-self: center;
+    }
   }
 </style>
