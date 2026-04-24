@@ -1,0 +1,181 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Newsletter Resources for Creators",
+  "url": "https://go.redefiningretirement.io/topics/newsletters/",
+  "description": "Platform comparisons, growth strategies, and monetization guides for creators building email-first audiences.",
+  "isPartOf": {
+    "@type": "WebSite",
+    "url": "https://go.redefiningretirement.io"
+  }
+};
+
+const articles = [
+  {
+    tag: 'Comparison',
+    title: 'Beehiiv vs. Substack',
+    desc: 'Which newsletter platform is built for growth — and which one is built for writers? An honest breakdown of pricing, features, and who each one actually serves.',
+    href: '/compare/beehiiv-vs-substack/',
+    cta: 'Read comparison →',
+  },
+];
+
+const guides = [
+  {
+    tag: 'Guide',
+    title: 'Move Your Audience to a Newsletter',
+    desc: "You've spent years building a following on a platform you don't control. Here's exactly how to move them to an email list — without starting from zero.",
+    href: '/guides/move-your-audience-to-a-newsletter/',
+    cta: 'Read guide →',
+  },
+];
+---
+
+<Layout
+  title="Newsletter Resources for Creators | Redefining Retirement"
+  description="Platform comparisons, growth strategies, and monetization guides for creators building email-first audiences they actually own."
+  schema={schema}
+>
+  <div class="section">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">Home</a><span>&rsaquo;</span> Topics <span>&rsaquo;</span> Newsletters
+      </div>
+
+      <div class="topic-header">
+        <span class="tape-label topic-tape">Newsletters</span>
+        <p class="topic-intro">
+          Email is the only platform where you own the relationship.
+          No algorithm between you and your reader. No account bans wiping out years of work.
+          These resources cover everything from picking the right platform to actually making money from your list.
+        </p>
+      </div>
+
+      <h2 class="group-heading"><span class="blue-dot"></span>Comparisons</h2>
+      <div class="card-grid">
+        {articles.map(({ tag, title, desc, href, cta }) => (
+          <a href={href} class="card card--link">
+            <span class="tag">{tag}</span>
+            <h3>{title}</h3>
+            <p>{desc}</p>
+            <span class="card-link">{cta}</span>
+          </a>
+        ))}
+      </div>
+
+      <h2 class="group-heading"><span class="blue-dot"></span>Guides</h2>
+      <div class="card-grid">
+        {guides.map(({ tag, title, desc, href, cta }) => (
+          <a href={href} class="card card--link">
+            <span class="tag">{tag}</span>
+            <h3>{title}</h3>
+            <p>{desc}</p>
+            <span class="card-link">{cta}</span>
+          </a>
+        ))}
+      </div>
+
+      <div class="topic-related">
+        <h3>Explore other topics</h3>
+        <div class="related-links">
+          <a href="/topics/creator-tools/">Creator Tools &rarr;</a>
+          <a href="/topics/ai-resources/">AI Resources &rarr;</a>
+        </div>
+      </div>
+
+      <div class="cta-block">
+        <h2>The newsletter about owning your audience</h2>
+        <p>
+          Redefining Retirement covers how Gen X creators are escaping platform dependency
+          and building income streams that compound. Real strategies, no hype.
+        </p>
+        <a
+          href="https://redefiningretirement.io/#subscribe"
+          class="btn"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Get the Free Newsletter &rarr;
+        </a>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .topic-header {
+    margin-bottom: 3rem;
+  }
+
+  .topic-tape {
+    margin-bottom: 1.25rem;
+    display: inline-block;
+  }
+
+  .topic-intro {
+    color: #bbb;
+    font-size: 1.05rem;
+    max-width: 640px;
+    line-height: 1.65;
+  }
+
+  .group-heading {
+    font-size: 1.1rem;
+    color: var(--white);
+    margin: 2.5rem 0 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .card--link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .card-link {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    color: var(--blue);
+    font-family: var(--font-display);
+    font-weight: 700;
+  }
+
+  .topic-related {
+    margin: 3rem 0;
+    padding-top: 2rem;
+    border-top: 1px solid #222;
+  }
+
+  .topic-related h3 {
+    font-size: 0.9rem;
+    color: #888;
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.75rem;
+  }
+
+  .related-links {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .related-links a {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--blue);
+    text-decoration: none;
+  }
+
+  .related-links a:hover {
+    text-decoration: underline;
+  }
+</style>

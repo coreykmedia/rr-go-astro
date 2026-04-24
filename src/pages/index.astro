@@ -1,0 +1,248 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Redefining Retirement — Creator Resources",
+  "url": "https://go.redefiningretirement.io",
+  "description": "Tools, comparisons, and guides for Gen X creators and solopreneurs who want to own their audience.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Redefining Retirement",
+    "url": "https://redefiningretirement.io"
+  }
+};
+
+const topics = [
+  {
+    tag: 'Topic',
+    title: 'Newsletters',
+    desc: 'Platform comparisons, growth strategies, and monetization guides for creators building email-first audiences.',
+    href: '/topics/newsletters/',
+  },
+  {
+    tag: 'Topic',
+    title: 'Creator Tools',
+    desc: 'The software stack that actually matters — tools for building, growing, and monetizing without burning out.',
+    href: '/topics/creator-tools/',
+  },
+  {
+    tag: 'Topic',
+    title: 'AI Resources',
+    desc: 'How Gen X creators are using AI to do more with less — without losing the human voice that built their audience.',
+    href: '/topics/ai-resources/',
+  },
+];
+
+const featured = [
+  {
+    tag: 'Comparison',
+    title: 'Beehiiv vs. Substack',
+    desc: 'Which newsletter platform is actually worth your time? We break down pricing, features, and who each one is really built for.',
+    href: '/compare/beehiiv-vs-substack/',
+    cta: 'Read the comparison →',
+  },
+  {
+    tag: 'Guide',
+    title: 'Move Your Audience to a Newsletter',
+    desc: "You've built a following on a platform you don't own. Here's the step-by-step playbook to move them to email — without losing momentum.",
+    href: '/guides/move-your-audience-to-a-newsletter/',
+    cta: 'Read the guide →',
+  },
+];
+---
+
+<Layout
+  title="Creator Resources for Gen X Solopreneurs | Redefining Retirement"
+  description="Tools, comparisons, and guides for Gen X creators and solopreneurs who want to own their audience — not rent it from platforms."
+  schema={schema}
+>
+  <!-- Hero -->
+  <section class="hero section">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="tape-label hero-tape">Your audience isn't yours.</div>
+        <p class="hero-sub">Not until you own the list.</p>
+        <p class="hero-body">
+          You've put years into building a following on platforms that can change the rules tomorrow.
+          This site is about fixing that — with honest tools, real comparisons, and guides that skip the hype.
+        </p>
+        <div class="hero-actions">
+          <a href="/resources/" class="btn">Browse Resources</a>
+          <a
+            href="https://redefiningretirement.io/#subscribe"
+            class="btn btn--outline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Get the Newsletter
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Topics -->
+  <section class="section section--dark">
+    <div class="container">
+      <h2 class="section-heading">
+        <span class="blue-dot"></span>Topics
+      </h2>
+      <div class="card-grid">
+        {topics.map(({ tag, title, desc, href }) => (
+          <a href={href} class="card card--topic">
+            <span class="tag">{tag}</span>
+            <h3>{title}</h3>
+            <p>{desc}</p>
+            <span class="card-link">Explore {title} &rarr;</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured content -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-heading">
+        <span class="blue-dot"></span>Start Here
+      </h2>
+      <div class="card-grid card-grid--featured">
+        {featured.map(({ tag, title, desc, href, cta }) => (
+          <a href={href} class="card card--featured">
+            <span class="tag">{tag}</span>
+            <h3>{title}</h3>
+            <p>{desc}</p>
+            <span class="card-link">{cta}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter CTA -->
+  <section class="section">
+    <div class="container">
+      <div class="cta-block">
+        <div class="tape-label" style="font-size:1.1rem; margin-bottom:1rem; display:inline-block;">Gen eXit Playbook</div>
+        <h2>Build income that doesn't depend on the algorithm</h2>
+        <p>
+          The Redefining Retirement newsletter covers how Gen X creators and solopreneurs
+          are building audiences they own and income streams that compound.
+          No fluff. No retirement golf metaphors.
+        </p>
+        <a
+          href="https://redefiningretirement.io/#subscribe"
+          class="btn"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Get the Free Newsletter &rarr;
+        </a>
+        <p class="cta-footnote">Join creators who are done building on rented land.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Back to main site -->
+  <div class="back-to-main">
+    <div class="container">
+      <p>
+        A resource hub by
+        <a href="https://redefiningretirement.io" target="_blank" rel="noopener noreferrer">RedefiningRetirement.io</a>
+        &mdash; for Gen X creators building financial independence on their own terms.
+      </p>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .hero {
+    padding: 5rem 0 4rem;
+  }
+
+  .hero-inner {
+    max-width: 680px;
+  }
+
+  .hero-tape {
+    margin-bottom: 0.75rem;
+  }
+
+  .hero-sub {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    color: var(--white);
+    margin-bottom: 1.25rem;
+    line-height: 1.1;
+  }
+
+  .hero-body {
+    color: #bbb;
+    font-size: 1.05rem;
+    margin-bottom: 2rem;
+    max-width: 560px;
+    line-height: 1.65;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .section-heading {
+    font-size: 1.3rem;
+    color: var(--white);
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .card--topic,
+  .card--featured {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .card-link {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    color: var(--blue);
+    font-family: var(--font-display);
+    font-weight: 700;
+  }
+
+  .card-grid--featured {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  }
+
+  .cta-footnote {
+    margin-top: 0.75rem;
+    font-size: 0.8rem;
+    color: #666;
+  }
+
+  .back-to-main {
+    background: #0d0d0d;
+    border-top: 1px solid #1a1a1a;
+    padding: 1rem 0;
+    text-align: center;
+    margin-top: -4rem;
+  }
+
+  .back-to-main p {
+    color: #555;
+    font-size: 0.82rem;
+  }
+
+  .back-to-main a {
+    color: #777;
+    text-decoration: underline;
+  }
+</style>

@@ -1,0 +1,323 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Move Your Audience to a Newsletter",
+  "description": "A step-by-step guide for creators and solopreneurs to move their social media following to an email list they own.",
+  "url": "https://go.redefiningretirement.io/guides/move-your-audience-to-a-newsletter/",
+  "author": {
+    "@type": "Organization",
+    "name": "Redefining Retirement",
+    "url": "https://redefiningretirement.io"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Redefining Retirement",
+    "url": "https://redefiningretirement.io"
+  },
+  "step": [
+    { "@type": "HowToStep", "name": "Pick your platform", "text": "Choose a newsletter platform before you start sending traffic to a sign-up page." },
+    { "@type": "HowToStep", "name": "Create a lead magnet", "text": "Give people a specific reason to hand over their email address." },
+    { "@type": "HowToStep", "name": "Build your sign-up page", "text": "One focused page, one offer, one action." },
+    { "@type": "HowToStep", "name": "Tell your audience", "text": "Make the announcement across every platform you're on — more than once." },
+    { "@type": "HowToStep", "name": "Set up a welcome sequence", "text": "The first email is the most important one you'll ever send." },
+    { "@type": "HowToStep", "name": "Cross-promote consistently", "text": "Every piece of content you publish should point back to your newsletter." },
+  ]
+};
+
+const steps = [
+  {
+    num: '01',
+    title: 'Pick your platform before you do anything else',
+    body: `Don't start building until you know where people are landing. You only get to make a first impression once — sending someone to a half-finished sign-up page kills momentum before it starts.
+
+For most creators in this space, Beehiiv is the right call. Strong analytics, built-in referral system, and no percentage cut on paid subscribers. If you're not sure yet, start there.
+
+The platform matters less than actually starting. Pick one and move.`,
+  },
+  {
+    num: '02',
+    title: 'Create a lead magnet worth giving an email for',
+    body: `"Subscribe to my newsletter" is not a lead magnet. Nobody subscribes for the newsletter. They subscribe for the thing the newsletter promises them.
+
+Your lead magnet should solve one specific problem that your audience has right now. Not a vague "guide to better content." Something like: "The exact 5-email welcome sequence I used to add 800 subscribers in 30 days."
+
+Specific beats comprehensive every time.
+
+Don't overthink the format. A PDF, a checklist, a swipe file, a short video — whatever you can create this week. Get it out.`,
+  },
+  {
+    num: '03',
+    title: 'Build a sign-up page that does one thing',
+    body: `One offer. One button. No nav links. No distractions.
+
+Your sign-up page should answer three questions in under 10 seconds:
+1. What will I get if I sign up?
+2. Who is this for?
+3. What do I do next?
+
+Add a few lines of social proof if you have it — subscriber count, a testimonial, a result someone got from your content. Keep the form short. First name and email. That's it.`,
+  },
+  {
+    num: '04',
+    title: 'Tell your audience — and tell them again',
+    body: `Most creators under-promote their newsletter because they don't want to feel repetitive.
+
+Your audience doesn't see everything you post. Algorithms bury posts. People scroll past. The same person might need to see your newsletter pitch five times before they act on it.
+
+Post the announcement on every platform. Pin it to your profile. Add a link to your bio. Mention it at the end of videos. Bring it up in the middle of content where it's relevant. The people who want it will sign up. The people who don't will ignore it — they were never going to subscribe anyway.`,
+  },
+  {
+    num: '05',
+    title: 'Write a welcome email that actually matters',
+    body: `The welcome email is the most-opened email you'll ever send. Most creators waste it.
+
+Don't send a generic "thanks for subscribing" message. Write a real email that:
+- Reminds them why they signed up and what you promised them
+- Delivers the lead magnet (if you have one) immediately
+- Tells them who you are in one short paragraph — your story, not your credentials
+- Tells them what to expect: how often, what topics, what makes this different
+- Asks them one question to start a conversation
+
+A good welcome email sets the tone for the entire relationship. Take your time with it.`,
+  },
+  {
+    num: '06',
+    title: 'Cross-promote on every piece of content you publish',
+    body: `Moving your audience is not a one-time announcement. It's a system you build into everything you create.
+
+Every YouTube video ends with "link in description to join the newsletter." Every podcast episode mentions it. Every social post that does well gets a follow-up comment or reply that points to the list. Every blog post has a sign-up form in it.
+
+The goal is to build a flywheel where your existing content keeps sending people to your email list long after you publish it. Set it up once; let it run.`,
+  },
+];
+---
+
+<Layout
+  title="How to Move Your Audience to a Newsletter | Redefining Retirement"
+  description="A step-by-step guide for creators and solopreneurs moving their social media following to an email list they actually own — without starting from scratch."
+  type="article"
+  schema={schema}
+>
+  <article class="section">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">Home</a><span>&rsaquo;</span>
+        <a href="/topics/newsletters/">Newsletters</a><span>&rsaquo;</span>
+        Move Your Audience to a Newsletter
+      </div>
+
+      <header class="article-header">
+        <span class="tape-label article-tape">Guide</span>
+        <h1 class="article-title">Move Your Audience to a Newsletter</h1>
+        <p class="article-deck">
+          You've spent years building a following on a platform someone else controls.
+          Here's the step-by-step playbook to move them to an email list — without losing the momentum you've built.
+        </p>
+      </header>
+
+      <div class="prose">
+        <h2>Why this matters</h2>
+        <p>
+          Your 50,000 followers on Instagram aren't yours. Neither are your 100,000 YouTube subscribers.
+          The platform owns the relationship. They decide how many people see your content.
+          They can change the algorithm tomorrow, ban your account, or shut down entirely.
+        </p>
+        <p>
+          Your email list is different. When you send an email, it goes directly to your subscriber's inbox.
+          No algorithm between you and them. No account bans. No one can take it from you.
+        </p>
+        <p>
+          That's not a small thing. That's the difference between renting an audience and owning one.
+        </p>
+        <p>
+          This guide is for creators who already have an audience somewhere — social media, YouTube, a podcast,
+          a blog — and want to move them to email before the next platform change wipes out what they've built.
+        </p>
+      </div>
+
+      <!-- Steps -->
+      <div class="steps">
+        {steps.map(({ num, title, body }) => (
+          <div class="step">
+            <div class="step-num">{num}</div>
+            <div class="step-content">
+              <h2 class="step-title">{title}</h2>
+              {body.split('\n\n').map((para) => (
+                <p>{para}</p>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="prose">
+        <h2>How long does this take?</h2>
+        <p>
+          Setup takes a weekend if you focus. Picking a platform, building a sign-up page, writing your welcome email,
+          creating a simple lead magnet — none of it is technically hard. The hardest part is starting.
+        </p>
+        <p>
+          Results take longer. Expect your list to grow slowly at first. That's normal.
+          Consistency compounds. Three months in, the numbers start to move.
+          A year in, you'll wonder why you waited.
+        </p>
+
+        <h2>What if I'm starting from zero?</h2>
+        <p>
+          Everything in this guide still applies, you'll just skip the "announce to your existing audience" step.
+          Build the infrastructure first — platform, lead magnet, sign-up page, welcome email —
+          then focus on driving traffic through your content.
+        </p>
+        <p>
+          Zero is better than nothing. The best time to start a list was when you started creating.
+          The second best time is now.
+        </p>
+      </div>
+
+      <div class="related-content">
+        <h3>Related</h3>
+        <div class="related-links">
+          <a href="/compare/beehiiv-vs-substack/">Beehiiv vs. Substack: Which platform to pick &rarr;</a>
+          <a href="/topics/newsletters/">All Newsletter Resources &rarr;</a>
+        </div>
+      </div>
+
+      <div class="cta-block">
+        <h2>See the playbook in action</h2>
+        <p>
+          Redefining Retirement is a newsletter for Gen X creators building income they own.
+          Sign up and get the Gen eXit Playbook — 11 pages on building an offensive retirement portfolio
+          through audience ownership and creator income.
+        </p>
+        <a
+          href="https://redefiningretirement.io/#subscribe"
+          class="btn"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Get the Free Newsletter + Playbook &rarr;
+        </a>
+      </div>
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .article-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .article-tape {
+    margin-bottom: 1rem;
+    display: inline-block;
+  }
+
+  .article-title {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    color: var(--white);
+    margin-bottom: 1rem;
+    line-height: 1.1;
+  }
+
+  .article-deck {
+    color: #bbb;
+    font-size: 1.1rem;
+    max-width: 640px;
+    line-height: 1.65;
+  }
+
+  .steps {
+    margin: 2.5rem 0;
+  }
+
+  .step {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid #1e1e1e;
+  }
+
+  .step:last-child {
+    border-bottom: none;
+  }
+
+  .step-num {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 2rem;
+    color: var(--blue);
+    opacity: 0.4;
+    flex-shrink: 0;
+    width: 3rem;
+    line-height: 1.1;
+    padding-top: 0.15rem;
+  }
+
+  .step-content {
+    flex: 1;
+  }
+
+  .step-title {
+    font-size: 1.2rem;
+    color: var(--white);
+    margin-bottom: 0.75rem;
+  }
+
+  .step-content p {
+    color: #bbb;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 0.75rem;
+  }
+
+  .step-content p:last-child {
+    margin-bottom: 0;
+  }
+
+  .related-content {
+    margin: 3rem 0;
+    padding-top: 2rem;
+    border-top: 1px solid #222;
+  }
+
+  .related-content h3 {
+    font-size: 0.9rem;
+    color: #888;
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.75rem;
+  }
+
+  .related-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .related-links a {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--blue);
+    text-decoration: none;
+  }
+
+  .related-links a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 540px) {
+    .step {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .step-num {
+      font-size: 1.3rem;
+    }
+  }
+</style>

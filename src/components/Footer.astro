@@ -1,0 +1,155 @@
+---
+const topics = [
+  { label: 'Newsletters', href: '/topics/newsletters/' },
+  { label: 'Creator Tools', href: '/topics/creator-tools/' },
+  { label: 'AI Resources', href: '/topics/ai-resources/' },
+];
+
+const resources = [
+  { label: 'Compare: Beehiiv vs Substack', href: '/compare/beehiiv-vs-substack/' },
+  { label: 'Guide: Move Your Audience to Email', href: '/guides/move-your-audience-to-a-newsletter/' },
+  { label: 'All Resources', href: '/resources/' },
+];
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-newsletter">
+      <div class="tape-label" style="font-size:1.1rem; transform:rotate(-0.5deg);">Stop building on rented land.</div>
+      <p>Gen X creators and solopreneurs figuring out how to own their audience and build income that doesn't disappear with the next algorithm update.</p>
+      <a
+        href="https://redefiningretirement.io/#subscribe"
+        class="btn"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Get the Free Newsletter →
+      </a>
+    </div>
+
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Topics</h4>
+        <ul>
+          {topics.map(({ label, href }) => (
+            <li><a href={href}>{label}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          {resources.map(({ label, href }) => (
+            <li><a href={href}>{label}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>RedefiningRetirement.io</h4>
+        <ul>
+          <li><a href="https://redefiningretirement.io" target="_blank" rel="noopener noreferrer">Main Site</a></li>
+          <li><a href="https://redefiningretirement.io/#subscribe" target="_blank" rel="noopener noreferrer">Newsletter</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© {new Date().getFullYear()} Redefining Retirement · <a href="https://redefiningretirement.io" target="_blank" rel="noopener noreferrer">redefiningretirement.io</a></p>
+      <p class="footer-disclaimer">This site contains affiliate links. We may earn a commission if you purchase through them — at no extra cost to you.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: #0d0d0d;
+    border-top: 1px solid #222;
+    padding: 3rem 0 1.5rem;
+    margin-top: 4rem;
+  }
+
+  .footer-newsletter {
+    text-align: center;
+    max-width: 540px;
+    margin: 0 auto 3rem;
+  }
+
+  .footer-newsletter .tape-label {
+    margin-bottom: 1rem;
+  }
+
+  .footer-newsletter p {
+    color: #aaa;
+    font-size: 0.95rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .footer-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #222;
+  }
+
+  .footer-col h4 {
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--blue);
+    margin-bottom: 0.75rem;
+  }
+
+  .footer-col ul {
+    list-style: none;
+  }
+
+  .footer-col li {
+    margin-bottom: 0.4rem;
+  }
+
+  .footer-col a {
+    color: #888;
+    font-size: 0.85rem;
+    transition: color 0.2s;
+    text-decoration: none;
+  }
+
+  .footer-col a:hover {
+    color: var(--white);
+  }
+
+  .footer-bottom {
+    padding-top: 1.5rem;
+    text-align: center;
+  }
+
+  .footer-bottom p {
+    color: #555;
+    font-size: 0.8rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .footer-bottom a {
+    color: #777;
+  }
+
+  .footer-disclaimer {
+    font-size: 0.75rem !important;
+  }
+
+  @media (max-width: 640px) {
+    .footer-links {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .footer-links {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

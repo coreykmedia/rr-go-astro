@@ -1,0 +1,237 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Creator Tools",
+  "url": "https://go.redefiningretirement.io/topics/creator-tools/",
+  "description": "The software stack that actually matters for Gen X creators building sustainable income.",
+  "isPartOf": {
+    "@type": "WebSite",
+    "url": "https://go.redefiningretirement.io"
+  }
+};
+
+const tools = [
+  {
+    category: 'Newsletter Platforms',
+    items: [
+      { name: 'Beehiiv', desc: 'Built for growth. Strong monetization features, referral program, and analytics.', type: 'Affiliate link' },
+      { name: 'Kit (formerly ConvertKit)', desc: 'Creator-first email platform. Powerful automations, great for selling digital products.', type: 'Affiliate link' },
+      { name: 'Substack', desc: 'Free to start, takes a cut of paid subscriptions. Best for writers who want simplicity.', type: 'No affiliate' },
+    ]
+  },
+  {
+    category: 'Content & Publishing',
+    items: [
+      { name: 'Transistor.fm', desc: 'Podcast hosting with clean analytics and private podcast support.', type: 'Affiliate link' },
+      { name: 'Descript', desc: 'Edit video and audio like a document. Removes filler words automatically.', type: 'No affiliate' },
+      { name: 'Riverside.fm', desc: 'High-quality remote recordings for podcasts and video interviews.', type: 'No affiliate' },
+    ]
+  },
+  {
+    category: 'Community & Courses',
+    items: [
+      { name: 'Circle', desc: 'Build a paid community around your content. Integrates with most course platforms.', type: 'No affiliate' },
+      { name: 'Podia', desc: 'Sell courses, memberships, and digital downloads from one place.', type: 'No affiliate' },
+    ]
+  },
+];
+---
+
+<Layout
+  title="Creator Tools for Solopreneurs | Redefining Retirement"
+  description="The software stack that actually matters for Gen X creators and solopreneurs building sustainable income — honest reviews, no inflated ratings."
+  schema={schema}
+>
+  <div class="section">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">Home</a><span>&rsaquo;</span> Topics <span>&rsaquo;</span> Creator Tools
+      </div>
+
+      <div class="topic-header">
+        <span class="tape-label topic-tape">Creator Tools</span>
+        <p class="topic-intro">
+          Most "best tools for creators" lists are just affiliate link farms.
+          This one is what actually gets used to build real creator businesses —
+          the stack that helps you own your audience, publish consistently, and monetize without selling out.
+        </p>
+        <p class="topic-note">
+          Some links are affiliate links. We only list tools we'd recommend anyway.
+          A note marks which ones pay us.
+        </p>
+      </div>
+
+      {tools.map(({ category, items }) => (
+        <div class="tool-group">
+          <h2 class="group-heading"><span class="blue-dot"></span>{category}</h2>
+          <div class="tool-list">
+            {items.map(({ name, desc, type }) => (
+              <div class="tool-card">
+                <div class="tool-info">
+                  <h3>{name}</h3>
+                  <p>{desc}</p>
+                </div>
+                <span class={`tool-badge ${type === 'Affiliate link' ? 'tool-badge--affiliate' : ''}`}>
+                  {type}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+
+      <div class="topic-related">
+        <h3>Explore other topics</h3>
+        <div class="related-links">
+          <a href="/topics/newsletters/">Newsletters &rarr;</a>
+          <a href="/topics/ai-resources/">AI Resources &rarr;</a>
+        </div>
+      </div>
+
+      <div class="cta-block">
+        <h2>Get the full stack breakdown in the newsletter</h2>
+        <p>
+          Redefining Retirement covers the tools, tactics, and mindset shifts Gen X creators
+          are using to build income that lasts. One issue a week. No filler.
+        </p>
+        <a
+          href="https://redefiningretirement.io/#subscribe"
+          class="btn"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Get the Free Newsletter &rarr;
+        </a>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .topic-header {
+    margin-bottom: 3rem;
+  }
+
+  .topic-tape {
+    margin-bottom: 1.25rem;
+    display: inline-block;
+  }
+
+  .topic-intro {
+    color: #bbb;
+    font-size: 1.05rem;
+    max-width: 640px;
+    line-height: 1.65;
+    margin-bottom: 0.75rem;
+  }
+
+  .topic-note {
+    color: #666;
+    font-size: 0.85rem;
+    max-width: 540px;
+  }
+
+  .tool-group {
+    margin-bottom: 2.5rem;
+  }
+
+  .group-heading {
+    font-size: 1.1rem;
+    color: var(--white);
+    margin: 2.5rem 0 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .tool-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .tool-card {
+    background: var(--dark-gray);
+    border: 1px solid #2a2a2a;
+    border-radius: 6px;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .tool-info h3 {
+    font-size: 1rem;
+    color: var(--white);
+    margin-bottom: 0.3rem;
+  }
+
+  .tool-info p {
+    font-size: 0.88rem;
+    color: #999;
+    line-height: 1.5;
+  }
+
+  .tool-badge {
+    font-size: 0.7rem;
+    font-family: var(--font-display);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 0.2em 0.6em;
+    border-radius: 3px;
+    background: #2a2a2a;
+    color: #666;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+  }
+
+  .tool-badge--affiliate {
+    background: rgba(0, 127, 255, 0.1);
+    color: var(--blue);
+  }
+
+  .topic-related {
+    margin: 3rem 0;
+    padding-top: 2rem;
+    border-top: 1px solid #222;
+  }
+
+  .topic-related h3 {
+    font-size: 0.9rem;
+    color: #888;
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.75rem;
+  }
+
+  .related-links {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .related-links a {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--blue);
+    text-decoration: none;
+  }
+
+  .related-links a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 540px) {
+    .tool-card {
+      flex-direction: column;
+    }
+  }
+</style>

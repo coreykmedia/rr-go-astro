@@ -1,0 +1,245 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "AI Resources for Creators",
+  "url": "https://go.redefiningretirement.io/topics/ai-resources/",
+  "description": "How Gen X creators are using AI to do more with less — without losing the human voice that built their audience.",
+  "isPartOf": {
+    "@type": "WebSite",
+    "url": "https://go.redefiningretirement.io"
+  }
+};
+
+const useCases = [
+  {
+    title: 'Repurposing content faster',
+    desc: "Turn one long video or newsletter into a week's worth of posts. AI handles the reformatting; you keep the voice.",
+  },
+  {
+    title: 'Research and first drafts',
+    desc: 'Use AI to pull together background research and rough outlines, then rewrite in your own words. Cuts prep time significantly.',
+  },
+  {
+    title: 'Email subject line testing',
+    desc: 'Generate 10 subject line variants in 30 seconds. Pick the one that sounds like you. Test it.',
+  },
+  {
+    title: 'Transcripts and show notes',
+    desc: 'Auto-transcribe video and audio, then use AI to extract key points and quotes. Hours become minutes.',
+  },
+  {
+    title: 'SEO and keyword research',
+    desc: 'Use AI to identify topic gaps and content angles. Still requires your judgment — but the grunt work gets faster.',
+  },
+];
+---
+
+<Layout
+  title="AI Resources for Gen X Creators | Redefining Retirement"
+  description="How Gen X creators and solopreneurs are using AI to do more with less — without losing the human voice that built their audience."
+  schema={schema}
+>
+  <div class="section">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">Home</a><span>&rsaquo;</span> Topics <span>&rsaquo;</span> AI Resources
+      </div>
+
+      <div class="topic-header">
+        <span class="tape-label topic-tape">AI Resources</span>
+        <p class="topic-intro">
+          AI isn't going to replace your voice. But it will replace creators who refuse to use it.
+          These resources are for Gen X solopreneurs who want to work smarter —
+          not hand their brand over to a machine.
+        </p>
+      </div>
+
+      <div class="callout">
+        <p>
+          <strong>The rule here:</strong> AI speeds up the work you already know how to do.
+          It doesn't replace your judgment, your stories, or the 20 years of experience you bring.
+          Use it for output, not for thinking.
+        </p>
+      </div>
+
+      <h2 class="group-heading"><span class="blue-dot"></span>What creators are actually using AI for</h2>
+      <div class="use-case-grid">
+        {useCases.map(({ title, desc }) => (
+          <div class="use-case-card">
+            <h3>{title}</h3>
+            <p>{desc}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="coming-soon">
+        <h2>More AI guides coming soon</h2>
+        <p>
+          We're building out this section with specific walkthroughs — tools, prompts, and workflows
+          for creators who want the output without the fluff.
+          Get the newsletter and you'll see them first.
+        </p>
+        <a
+          href="https://redefiningretirement.io/#subscribe"
+          class="btn"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Get notified &rarr;
+        </a>
+      </div>
+
+      <div class="topic-related">
+        <h3>Explore other topics</h3>
+        <div class="related-links">
+          <a href="/topics/newsletters/">Newsletters &rarr;</a>
+          <a href="/topics/creator-tools/">Creator Tools &rarr;</a>
+        </div>
+      </div>
+
+      <div class="cta-block">
+        <h2>The newsletter that covers AI without the hype</h2>
+        <p>
+          Real-world AI tactics for Gen X creators who are short on time and long on skepticism.
+          One issue a week.
+        </p>
+        <a
+          href="https://redefiningretirement.io/#subscribe"
+          class="btn"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Get the Free Newsletter &rarr;
+        </a>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .topic-header {
+    margin-bottom: 2rem;
+  }
+
+  .topic-tape {
+    margin-bottom: 1.25rem;
+    display: inline-block;
+  }
+
+  .topic-intro {
+    color: #bbb;
+    font-size: 1.05rem;
+    max-width: 640px;
+    line-height: 1.65;
+  }
+
+  .callout {
+    background: rgba(0, 127, 255, 0.07);
+    border-left: 3px solid var(--blue);
+    padding: 1rem 1.25rem;
+    border-radius: 0 4px 4px 0;
+    margin: 2rem 0;
+    max-width: 640px;
+  }
+
+  .callout p {
+    color: #ccc;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .callout strong {
+    color: var(--white);
+  }
+
+  .group-heading {
+    font-size: 1.1rem;
+    color: var(--white);
+    margin: 2rem 0 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .use-case-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+  }
+
+  .use-case-card {
+    background: var(--dark-gray);
+    border: 1px solid #2a2a2a;
+    border-radius: 6px;
+    padding: 1.25rem;
+  }
+
+  .use-case-card h3 {
+    font-size: 0.95rem;
+    color: var(--white);
+    margin-bottom: 0.4rem;
+  }
+
+  .use-case-card p {
+    font-size: 0.875rem;
+    color: #999;
+    line-height: 1.55;
+  }
+
+  .coming-soon {
+    background: var(--dark-gray);
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    max-width: 560px;
+  }
+
+  .coming-soon h2 {
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .coming-soon p {
+    color: #999;
+    font-size: 0.9rem;
+    margin-bottom: 1.25rem;
+    line-height: 1.6;
+  }
+
+  .topic-related {
+    margin: 3rem 0;
+    padding-top: 2rem;
+    border-top: 1px solid #222;
+  }
+
+  .topic-related h3 {
+    font-size: 0.9rem;
+    color: #888;
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.75rem;
+  }
+
+  .related-links {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .related-links a {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--blue);
+    text-decoration: none;
+  }
+
+  .related-links a:hover {
+    text-decoration: underline;
+  }
+</style>

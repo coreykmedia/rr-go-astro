@@ -1,0 +1,155 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Creator Resources | Redefining Retirement",
+  "url": "https://go.redefiningretirement.io/resources/",
+  "description": "All guides, comparisons, and tools for Gen X creators and solopreneurs building audiences they own.",
+  "isPartOf": {
+    "@type": "WebSite",
+    "url": "https://go.redefiningretirement.io"
+  }
+};
+
+const comparisons = [
+  {
+    title: 'Beehiiv vs. Substack',
+    desc: 'Which newsletter platform is built for growth? An honest breakdown of pricing, features, and who each one actually serves.',
+    href: '/compare/beehiiv-vs-substack/',
+    tag: 'Comparison',
+  },
+];
+
+const guides = [
+  {
+    title: 'Move Your Audience to a Newsletter',
+    desc: "Step-by-step: how to migrate your social following to an email list you own — without losing momentum.",
+    href: '/guides/move-your-audience-to-a-newsletter/',
+    tag: 'Guide',
+  },
+];
+
+const topics = [
+  { title: 'Newsletters', href: '/topics/newsletters/', desc: 'Platform picks, growth strategies, monetization.' },
+  { title: 'Creator Tools', href: '/topics/creator-tools/', desc: 'The software stack for serious solopreneurs.' },
+  { title: 'AI Resources', href: '/topics/ai-resources/', desc: 'AI tactics that keep your voice intact.' },
+];
+---
+
+<Layout
+  title="All Resources for Creators and Solopreneurs | Redefining Retirement"
+  description="All guides, comparisons, and tools for Gen X creators and solopreneurs building audiences and income they own."
+  schema={schema}
+>
+  <div class="section">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">Home</a><span>&rsaquo;</span> Resources
+      </div>
+
+      <div class="resources-header">
+        <span class="tape-label resources-tape">All Resources</span>
+        <p class="resources-intro">
+          Guides, comparisons, and tools for creators and solopreneurs who are done
+          building on platforms they don't control.
+        </p>
+      </div>
+
+      <h2 class="group-heading"><span class="blue-dot"></span>Comparisons</h2>
+      <div class="card-grid">
+        {comparisons.map(({ title, desc, href, tag }) => (
+          <a href={href} class="card card--link">
+            <span class="tag">{tag}</span>
+            <h3>{title}</h3>
+            <p>{desc}</p>
+            <span class="card-link">Read &rarr;</span>
+          </a>
+        ))}
+      </div>
+
+      <h2 class="group-heading"><span class="blue-dot"></span>Guides</h2>
+      <div class="card-grid">
+        {guides.map(({ title, desc, href, tag }) => (
+          <a href={href} class="card card--link">
+            <span class="tag">{tag}</span>
+            <h3>{title}</h3>
+            <p>{desc}</p>
+            <span class="card-link">Read &rarr;</span>
+          </a>
+        ))}
+      </div>
+
+      <h2 class="group-heading"><span class="blue-dot"></span>Browse by Topic</h2>
+      <div class="card-grid">
+        {topics.map(({ title, href, desc }) => (
+          <a href={href} class="card card--link">
+            <span class="tag">Topic</span>
+            <h3>{title}</h3>
+            <p>{desc}</p>
+            <span class="card-link">Explore &rarr;</span>
+          </a>
+        ))}
+      </div>
+
+      <div class="cta-block">
+        <h2>New resources every week in the newsletter</h2>
+        <p>
+          The Redefining Retirement newsletter goes deeper than the site.
+          Tactics, case studies, and honest takes on building creator income as a Gen X solopreneur.
+        </p>
+        <a
+          href="https://redefiningretirement.io/#subscribe"
+          class="btn"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Get the Free Newsletter &rarr;
+        </a>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .resources-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .resources-tape {
+    margin-bottom: 1.25rem;
+    display: inline-block;
+  }
+
+  .resources-intro {
+    color: #bbb;
+    font-size: 1.05rem;
+    max-width: 580px;
+    line-height: 1.65;
+  }
+
+  .group-heading {
+    font-size: 1.1rem;
+    color: var(--white);
+    margin: 2.5rem 0 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .card--link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .card-link {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    color: var(--blue);
+    font-family: var(--font-display);
+    font-weight: 700;
+  }
+</style>

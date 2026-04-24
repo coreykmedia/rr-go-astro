@@ -1,0 +1,244 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Beehiiv vs. Substack: Which Newsletter Platform Is Right for Creators?",
+  "description": "An honest comparison of Beehiiv and Substack — pricing, features, monetization, and who each platform is actually built for.",
+  "url": "https://go.redefiningretirement.io/compare/beehiiv-vs-substack/",
+  "author": {
+    "@type": "Organization",
+    "name": "Redefining Retirement",
+    "url": "https://redefiningretirement.io"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Redefining Retirement",
+    "url": "https://redefiningretirement.io"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "url": "https://go.redefiningretirement.io"
+  }
+};
+
+const rows = [
+  { feature: 'Free plan', beehiiv: 'Yes — up to 2,500 subscribers', substack: 'Yes — unlimited subscribers' },
+  { feature: 'Paid newsletters', beehiiv: 'Yes (Scale plan, $99/mo+)', substack: 'Yes — 10% platform cut' },
+  { feature: 'Referral program', beehiiv: 'Built-in', substack: 'No' },
+  { feature: 'Ads / sponsorships', beehiiv: 'Beehiiv Ad Network built in', substack: 'No native ad network' },
+  { feature: 'Analytics', beehiiv: 'Strong — open rate, clicks, revenue', substack: 'Basic' },
+  { feature: 'Custom domain', beehiiv: 'Yes', substack: 'Yes (paid plans)' },
+  { feature: 'Web presence', beehiiv: 'Clean publication site', substack: 'Substack.com subdomain default' },
+  { feature: 'Automations', beehiiv: 'Yes — sequences, welcome series', substack: 'Very limited' },
+  { feature: 'Segmentation', beehiiv: 'Yes', substack: 'Basic' },
+  { feature: 'Platform take on paid subs', beehiiv: 'None on newsletter revenue', substack: '10% of subscription revenue' },
+  { feature: 'Network / discovery', beehiiv: 'Growing', substack: 'Strong — built-in reader network' },
+  { feature: 'Ease of use', beehiiv: 'Moderate — more features to learn', substack: 'Very simple' },
+];
+---
+
+<Layout
+  title="Beehiiv vs. Substack: Which Is Right for Creators? | Redefining Retirement"
+  description="An honest comparison of Beehiiv and Substack — pricing, features, monetization, and who each platform is actually built for in 2024."
+  type="article"
+  schema={schema}
+>
+  <article class="section">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">Home</a><span>&rsaquo;</span>
+        <a href="/topics/newsletters/">Newsletters</a><span>&rsaquo;</span>
+        Beehiiv vs. Substack
+      </div>
+
+      <header class="article-header">
+        <span class="tape-label article-tape">Beehiiv vs. Substack</span>
+        <p class="article-deck">
+          Two of the most popular newsletter platforms. Very different philosophies.
+          Here's the honest breakdown so you can stop second-guessing and pick one.
+        </p>
+      </header>
+
+      <div class="prose">
+        <h2>The short version</h2>
+        <p>
+          <strong>Pick Beehiiv if</strong> you want to grow fast, monetize through ads and sponsorships,
+          and want real analytics. It's built for creators who think of their newsletter as a business.
+        </p>
+        <p>
+          <strong>Pick Substack if</strong> you're a writer who wants to start writing today with zero friction.
+          The built-in reader network can help early discovery. But you'll pay 10% of every paid subscription forever.
+        </p>
+        <p>
+          If you're serious about building an owned audience as a revenue channel — and you're reading this site,
+          so you probably are — Beehiiv is the stronger long-term platform.
+        </p>
+
+        <h2>Pricing comparison</h2>
+        <p>
+          Beehiiv's free plan caps at 2,500 subscribers. After that, paid plans start at $42/month (Launch).
+          The Scale plan ($99/mo) unlocks the features that matter most — automations, ad network, advanced segmentation.
+        </p>
+        <p>
+          Substack is free until you charge your readers. Then they take 10%. On $5,000/month in paid subscriptions,
+          that's $500/month going to Substack — forever. As you grow, that cut compounds badly.
+        </p>
+
+        <h2>Feature breakdown</h2>
+      </div>
+
+      <div class="table-wrapper">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Beehiiv</th>
+              <th>Substack</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map(({ feature, beehiiv, substack }) => (
+              <tr>
+                <td><strong style="color: var(--white); font-size: 0.85rem;">{feature}</strong></td>
+                <td class="winner">{beehiiv}</td>
+                <td>{substack}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="prose">
+        <h2>Monetization: where they really differ</h2>
+        <p>
+          Substack's monetization model is simple: charge your readers, give Substack 10%. That model works well
+          if you have an audience that will pay for your writing and you want zero operational overhead.
+        </p>
+        <p>
+          Beehiiv's model is more flexible. You can charge readers, but you can also monetize through
+          Beehiiv's Ad Network — getting paid for sponsorships based on your subscriber count and engagement,
+          with no percentage cut. For creators with large free lists, this can be more lucrative than a paid subscription model.
+        </p>
+        <p>
+          The referral program is also worth calling out. Beehiiv has a built-in referral system
+          where your subscribers can earn rewards for bringing in new readers. Substack has no equivalent.
+        </p>
+
+        <h2>Discovery and network effects</h2>
+        <p>
+          Substack has a real advantage here. Their reader network means new publications can get discovered
+          by existing Substack readers. For early-stage newsletters, this matters.
+        </p>
+        <p>
+          Beehiiv's network is growing but less mature. You'll need to drive your own growth more intentionally —
+          which is fine if you're already an established creator moving to email.
+        </p>
+
+        <h2>Who should pick which</h2>
+        <p>
+          <strong>Beehiiv is the right call if:</strong> You want to grow your list aggressively,
+          monetize through sponsorships, need serious analytics, and plan to treat your newsletter
+          as a business — not just a writing habit.
+        </p>
+        <p>
+          <strong>Substack is the right call if:</strong> You're a writer first and want to start
+          publishing today with no tech friction. You're okay giving up 10% to avoid managing a platform.
+          Or you want early discovery from the Substack reader network.
+        </p>
+
+        <h2>The bottom line</h2>
+        <p>
+          Most creator-focused newsletters eventually outgrow Substack's limitations. The 10% cut
+          and lack of real automation tools become frustrating as you scale.
+          If you're starting fresh and plan to build this seriously, Beehiiv is the better foundation.
+        </p>
+        <p>
+          Redefining Retirement runs on Beehiiv.
+          <a href="https://redefiningretirement.io/#subscribe" target="_blank" rel="noopener noreferrer">See it in action &rarr;</a>
+        </p>
+      </div>
+
+      <div class="related-content">
+        <h3>Related</h3>
+        <div class="related-links">
+          <a href="/topics/newsletters/">All Newsletter Resources &rarr;</a>
+          <a href="/guides/move-your-audience-to-a-newsletter/">Move Your Audience to Email &rarr;</a>
+        </div>
+      </div>
+
+      <div class="cta-block">
+        <h2>See what a real creator newsletter looks like</h2>
+        <p>
+          Redefining Retirement is built on Beehiiv and covers exactly what we write about here —
+          owning your audience and building income that lasts. Check it out.
+        </p>
+        <a
+          href="https://redefiningretirement.io/#subscribe"
+          class="btn"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Get the Free Newsletter &rarr;
+        </a>
+      </div>
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .article-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .article-tape {
+    margin-bottom: 1.25rem;
+    display: inline-block;
+  }
+
+  .article-deck {
+    color: #bbb;
+    font-size: 1.1rem;
+    max-width: 640px;
+    line-height: 1.65;
+  }
+
+  .table-wrapper {
+    overflow-x: auto;
+    margin: 1.5rem 0 2rem;
+  }
+
+  .related-content {
+    margin: 3rem 0;
+    padding-top: 2rem;
+    border-top: 1px solid #222;
+  }
+
+  .related-content h3 {
+    font-size: 0.9rem;
+    color: #888;
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.75rem;
+  }
+
+  .related-links {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .related-links a {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--blue);
+    text-decoration: none;
+  }
+
+  .related-links a:hover {
+    text-decoration: underline;
+  }
+</style>
