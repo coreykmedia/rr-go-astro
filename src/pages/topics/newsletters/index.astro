@@ -46,7 +46,7 @@ const guides = [
       </div>
 
       <div class="topic-header">
-        <span class="tape-label topic-tape">Newsletters</span>
+        <span class="tag">Newsletters</span>
         <p class="topic-intro">
           Email is the only platform where you own the relationship.
           No algorithm between you and your reader. No account bans wiping out years of work.
@@ -93,7 +93,7 @@ const guides = [
           and building income streams that compound. Real strategies, no hype.
         </p>
         <a
-          href="https://redefiningretirement.io/#subscribe"
+          href="https://redefiningretirement.io/subscribe"
           class="btn"
           target="_blank"
           rel="noopener noreferrer"
@@ -110,13 +110,8 @@ const guides = [
     margin-bottom: 3rem;
   }
 
-  .topic-tape {
-    margin-bottom: 1.25rem;
-    display: inline-block;
-  }
-
   .topic-intro {
-    color: #bbb;
+    color: var(--text-muted);
     font-size: 1.05rem;
     max-width: 640px;
     line-height: 1.65;
@@ -124,7 +119,7 @@ const guides = [
 
   .group-heading {
     font-size: 1.1rem;
-    color: var(--white);
+    color: var(--text);
     margin: 2.5rem 0 0;
     display: flex;
     align-items: center;
@@ -142,20 +137,20 @@ const guides = [
     margin-top: 0.75rem;
     font-size: 0.85rem;
     color: var(--blue);
-    font-family: var(--font-display);
+    font-family: var(--font);
     font-weight: 700;
   }
 
   .topic-related {
     margin: 3rem 0;
     padding-top: 2rem;
-    border-top: 1px solid #222;
+    border-top: 1px solid var(--border);
   }
 
   .topic-related h3 {
     font-size: 0.9rem;
-    color: #888;
-    font-family: var(--font-display);
+    color: var(--text-light);
+    font-family: var(--font);
     text-transform: uppercase;
     letter-spacing: 0.06em;
     margin-bottom: 0.75rem;
@@ -168,7 +163,7 @@ const guides = [
   }
 
   .related-links a {
-    font-family: var(--font-display);
+    font-family: var(--font);
     font-weight: 700;
     font-size: 0.9rem;
     color: var(--blue);

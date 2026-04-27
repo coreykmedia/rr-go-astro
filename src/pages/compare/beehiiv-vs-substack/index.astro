@@ -54,7 +54,8 @@ const rows = [
       </div>
 
       <header class="article-header">
-        <span class="tape-label article-tape">Beehiiv vs. Substack</span>
+        <span class="tag">Comparison</span>
+        <h1 class="article-title">Beehiiv vs. Substack</h1>
         <p class="article-deck">
           Two of the most popular newsletter platforms. Very different philosophies.
           Here's the honest breakdown so you can stop second-guessing and pick one.
@@ -101,7 +102,7 @@ const rows = [
           <tbody>
             {rows.map(({ feature, beehiiv, substack }) => (
               <tr>
-                <td><strong style="color: var(--white); font-size: 0.85rem;">{feature}</strong></td>
+                <td><strong>{feature}</strong></td>
                 <td class="winner">{beehiiv}</td>
                 <td>{substack}</td>
               </tr>
@@ -156,7 +157,7 @@ const rows = [
         </p>
         <p>
           Redefining Retirement runs on Beehiiv.
-          <a href="https://redefiningretirement.io/#subscribe" target="_blank" rel="noopener noreferrer">See it in action &rarr;</a>
+          <a href="https://redefiningretirement.io/subscribe" target="_blank" rel="noopener noreferrer">See it in action &rarr;</a>
         </p>
       </div>
 
@@ -175,7 +176,7 @@ const rows = [
           owning your audience and building income that lasts. Check it out.
         </p>
         <a
-          href="https://redefiningretirement.io/#subscribe"
+          href="https://redefiningretirement.io/subscribe"
           class="btn"
           target="_blank"
           rel="noopener noreferrer"
@@ -192,13 +193,15 @@ const rows = [
     margin-bottom: 2.5rem;
   }
 
-  .article-tape {
-    margin-bottom: 1.25rem;
-    display: inline-block;
+  .article-title {
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    color: var(--text);
+    margin-bottom: 1rem;
+    line-height: 1.1;
   }
 
   .article-deck {
-    color: #bbb;
+    color: var(--text-muted);
     font-size: 1.1rem;
     max-width: 640px;
     line-height: 1.65;
@@ -212,13 +215,13 @@ const rows = [
   .related-content {
     margin: 3rem 0;
     padding-top: 2rem;
-    border-top: 1px solid #222;
+    border-top: 1px solid var(--border);
   }
 
   .related-content h3 {
     font-size: 0.9rem;
-    color: #888;
-    font-family: var(--font-display);
+    color: var(--text-light);
+    font-family: var(--font);
     text-transform: uppercase;
     letter-spacing: 0.06em;
     margin-bottom: 0.75rem;
@@ -231,7 +234,7 @@ const rows = [
   }
 
   .related-links a {
-    font-family: var(--font-display);
+    font-family: var(--font);
     font-weight: 700;
     font-size: 0.9rem;
     color: var(--blue);

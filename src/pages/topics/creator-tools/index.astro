@@ -52,7 +52,7 @@ const tools = [
       </div>
 
       <div class="topic-header">
-        <span class="tape-label topic-tape">Creator Tools</span>
+        <span class="tag">Creator Tools</span>
         <p class="topic-intro">
           Most "best tools for creators" lists are just affiliate link farms.
           This one is what actually gets used to build real creator businesses —
@@ -98,7 +98,7 @@ const tools = [
           are using to build income that lasts. One issue a week. No filler.
         </p>
         <a
-          href="https://redefiningretirement.io/#subscribe"
+          href="https://redefiningretirement.io/subscribe"
           class="btn"
           target="_blank"
           rel="noopener noreferrer"
@@ -115,13 +115,8 @@ const tools = [
     margin-bottom: 3rem;
   }
 
-  .topic-tape {
-    margin-bottom: 1.25rem;
-    display: inline-block;
-  }
-
   .topic-intro {
-    color: #bbb;
+    color: var(--text-muted);
     font-size: 1.05rem;
     max-width: 640px;
     line-height: 1.65;
@@ -129,7 +124,7 @@ const tools = [
   }
 
   .topic-note {
-    color: #666;
+    color: var(--text-light);
     font-size: 0.85rem;
     max-width: 540px;
   }
@@ -140,7 +135,7 @@ const tools = [
 
   .group-heading {
     font-size: 1.1rem;
-    color: var(--white);
+    color: var(--text);
     margin: 2.5rem 0 1rem;
     display: flex;
     align-items: center;
@@ -154,58 +149,63 @@ const tools = [
   }
 
   .tool-card {
-    background: var(--dark-gray);
-    border: 1px solid #2a2a2a;
-    border-radius: 6px;
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
     padding: 1.25rem 1.5rem;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     gap: 1rem;
+    transition: box-shadow 0.2s;
+  }
+
+  .tool-card:hover {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
   }
 
   .tool-info h3 {
     font-size: 1rem;
-    color: var(--white);
+    color: var(--text);
     margin-bottom: 0.3rem;
   }
 
   .tool-info p {
     font-size: 0.88rem;
-    color: #999;
+    color: var(--text-muted);
     line-height: 1.5;
   }
 
   .tool-badge {
     font-size: 0.7rem;
-    font-family: var(--font-display);
+    font-family: var(--font);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.06em;
     padding: 0.2em 0.6em;
-    border-radius: 3px;
-    background: #2a2a2a;
-    color: #666;
+    border-radius: var(--radius-pill);
+    background: var(--bg-subtle);
+    color: var(--text-light);
     white-space: nowrap;
     flex-shrink: 0;
     margin-top: 0.2rem;
   }
 
   .tool-badge--affiliate {
-    background: rgba(0, 127, 255, 0.1);
+    background: rgba(9, 161, 231, 0.1);
     color: var(--blue);
   }
 
   .topic-related {
     margin: 3rem 0;
     padding-top: 2rem;
-    border-top: 1px solid #222;
+    border-top: 1px solid var(--border);
   }
 
   .topic-related h3 {
     font-size: 0.9rem;
-    color: #888;
-    font-family: var(--font-display);
+    color: var(--text-light);
+    font-family: var(--font);
     text-transform: uppercase;
     letter-spacing: 0.06em;
     margin-bottom: 0.75rem;
@@ -218,7 +218,7 @@ const tools = [
   }
 
   .related-links a {
-    font-family: var(--font-display);
+    font-family: var(--font);
     font-weight: 700;
     font-size: 0.9rem;
     color: var(--blue);

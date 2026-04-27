@@ -110,7 +110,7 @@ The goal is to build a flywheel where your existing content keeps sending people
       </div>
 
       <header class="article-header">
-        <span class="tape-label article-tape">Guide</span>
+        <span class="tag">Guide</span>
         <h1 class="article-title">Move Your Audience to a Newsletter</h1>
         <p class="article-deck">
           You've spent years building a following on a platform someone else controls.
@@ -193,7 +193,7 @@ The goal is to build a flywheel where your existing content keeps sending people
           through audience ownership and creator income.
         </p>
         <a
-          href="https://redefiningretirement.io/#subscribe"
+          href="https://redefiningretirement.io/subscribe"
           class="btn"
           target="_blank"
           rel="noopener noreferrer"
@@ -210,20 +210,15 @@ The goal is to build a flywheel where your existing content keeps sending people
     margin-bottom: 2.5rem;
   }
 
-  .article-tape {
-    margin-bottom: 1rem;
-    display: inline-block;
-  }
-
   .article-title {
     font-size: clamp(1.8rem, 4vw, 2.8rem);
-    color: var(--white);
+    color: var(--text);
     margin-bottom: 1rem;
     line-height: 1.1;
   }
 
   .article-deck {
-    color: #bbb;
+    color: var(--text-muted);
     font-size: 1.1rem;
     max-width: 640px;
     line-height: 1.65;
@@ -237,7 +232,7 @@ The goal is to build a flywheel where your existing content keeps sending people
     display: flex;
     gap: 2rem;
     padding: 2rem 0;
-    border-bottom: 1px solid #1e1e1e;
+    border-bottom: 1px solid var(--border);
   }
 
   .step:last-child {
@@ -245,7 +240,7 @@ The goal is to build a flywheel where your existing content keeps sending people
   }
 
   .step-num {
-    font-family: var(--font-display);
+    font-family: var(--font);
     font-weight: 900;
     font-size: 2rem;
     color: var(--blue);
@@ -262,12 +257,12 @@ The goal is to build a flywheel where your existing content keeps sending people
 
   .step-title {
     font-size: 1.2rem;
-    color: var(--white);
+    color: var(--text);
     margin-bottom: 0.75rem;
   }
 
   .step-content p {
-    color: #bbb;
+    color: var(--text-muted);
     font-size: 0.95rem;
     line-height: 1.7;
     margin-bottom: 0.75rem;
@@ -280,13 +275,13 @@ The goal is to build a flywheel where your existing content keeps sending people
   .related-content {
     margin: 3rem 0;
     padding-top: 2rem;
-    border-top: 1px solid #222;
+    border-top: 1px solid var(--border);
   }
 
   .related-content h3 {
     font-size: 0.9rem;
-    color: #888;
-    font-family: var(--font-display);
+    color: var(--text-light);
+    font-family: var(--font);
     text-transform: uppercase;
     letter-spacing: 0.06em;
     margin-bottom: 0.75rem;
@@ -299,7 +294,7 @@ The goal is to build a flywheel where your existing content keeps sending people
   }
 
   .related-links a {
-    font-family: var(--font-display);
+    font-family: var(--font);
     font-weight: 700;
     font-size: 0.9rem;
     color: var(--blue);

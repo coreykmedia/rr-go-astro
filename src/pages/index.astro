@@ -4,9 +4,9 @@ import Layout from '../layouts/Layout.astro';
 const schema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "Redefining Retirement — Creator Resources",
-  "url": "https://go.redefiningretirement.io",
-  "description": "Tools, comparisons, and guides for Gen X creators and solopreneurs who want to own their audience.",
+  "name": "Redefining Retirement — Start Here",
+  "url": "https://start.redefiningretirement.io",
+  "description": "Tools, guides, comparisons, and newsletter resources for Gen X creators building audience-owned income.",
   "publisher": {
     "@type": "Organization",
     "name": "Redefining Retirement",
@@ -14,100 +14,129 @@ const schema = {
   }
 };
 
-const topics = [
+const quickLinks = [
   {
-    tag: 'Topic',
-    title: 'Newsletters',
-    desc: 'Platform comparisons, growth strategies, and monetization guides for creators building email-first audiences.',
-    href: '/topics/newsletters/',
+    label: 'Subscribe to the Newsletter',
+    href: 'https://redefiningretirement.io/subscribe',
+    external: true,
+    icon: '✉️',
   },
   {
-    tag: 'Topic',
-    title: 'Creator Tools',
-    desc: 'The software stack that actually matters — tools for building, growing, and monetizing without burning out.',
+    label: 'Browse All Resources',
+    href: '/resources/',
+    external: false,
+    icon: '📚',
+  },
+  {
+    label: 'Beehiiv vs. Substack — Full Comparison',
+    href: '/compare/beehiiv-vs-substack/',
+    external: false,
+    icon: '⚖️',
+  },
+  {
+    label: 'Move Your Audience to a Newsletter',
+    href: '/guides/move-your-audience-to-a-newsletter/',
+    external: false,
+    icon: '🗺️',
+  },
+  {
+    label: 'Creator Tools Stack',
     href: '/topics/creator-tools/',
+    external: false,
+    icon: '🛠️',
   },
   {
-    tag: 'Topic',
-    title: 'AI Resources',
-    desc: 'How Gen X creators are using AI to do more with less — without losing the human voice that built their audience.',
+    label: 'AI Resources for Creators',
     href: '/topics/ai-resources/',
+    external: false,
+    icon: '🤖',
+  },
+  {
+    label: 'Newsletter Platform Reviews',
+    href: '/topics/newsletters/',
+    external: false,
+    icon: '📰',
+  },
+  {
+    label: 'Listen to the Podcast',
+    href: 'https://redefiningretirement.io/podcast',
+    external: true,
+    icon: '🎙️',
   },
 ];
 
 const featured = [
   {
     tag: 'Comparison',
-    title: 'Beehiiv vs. Substack',
-    desc: 'Which newsletter platform is actually worth your time? We break down pricing, features, and who each one is really built for.',
+    title: 'Beehiiv vs. Substack for creators who want more control',
+    desc: 'A practical comparison for creators who want more ownership, better monetization options, and room to grow.',
     href: '/compare/beehiiv-vs-substack/',
     cta: 'Read the comparison &rarr;',
   },
   {
     tag: 'Guide',
-    title: 'Move Your Audience to a Newsletter',
-    desc: "You've built a following on a platform you don't own. Here's the step-by-step playbook to move them to email — without losing momentum.",
+    title: 'How to move your audience off social and onto a newsletter',
+    desc: 'A plain-English guide to turning rented attention into an audience you actually own.',
     href: '/guides/move-your-audience-to-a-newsletter/',
     cta: 'Read the guide &rarr;',
+  },
+  {
+    tag: 'Tools',
+    title: 'My creator tools stack for newsletters, podcasting, and YouTube',
+    desc: 'The handful of tools I use, test, or recommend to make content creation and distribution easier.',
+    href: '/topics/creator-tools/',
+    cta: 'See the stack &rarr;',
   },
 ];
 ---
 
 <Layout
-  title="Creator Resources for Gen X Solopreneurs | Redefining Retirement"
-  description="Tools, comparisons, and guides for Gen X creators and solopreneurs who want to own their audience — not rent it from platforms."
+  title="Start Here | Redefining Retirement"
+  description="Tools, guides, comparisons, and newsletter resources for Gen X creators building audience-owned income. The best place to start."
   schema={schema}
 >
-  <!-- Hero -->
-  <section class="hero">
-    <div class="container hero-container">
-      <div class="hero-inner">
-        <div class="tape-label hero-tape">Your audience isn't yours.</div>
-        <h1 class="hero-headline">Not until you own the list.</h1>
-        <p class="hero-body">
-          You've put years into building a following on platforms that can change the rules tomorrow.
-          This site is about fixing that — honest tools, real comparisons, and guides that skip the hype.
-        </p>
-        <div class="hero-actions">
-          <a href="/resources/" class="btn">Browse Resources</a>
-          <a
-            href="https://redefiningretirement.io/#subscribe"
-            class="btn btn--outline"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Get the Newsletter
-          </a>
-        </div>
-      </div>
-      <div class="hero-img">
-        <img src="/logo-full.png" alt="Redefining Retirement" />
-      </div>
-    </div>
-  </section>
 
-  <!-- Topics -->
-  <section class="section section--alt">
-    <div class="container">
-      <span class="section-heading">Topics</span>
-      <div class="card-grid">
-        {topics.map(({ tag, title, desc, href }) => (
-          <a href={href} class="card card--link">
-            <span class="tag">{tag}</span>
-            <h3>{title}</h3>
-            <p>{desc}</p>
-            <span class="card-link">Explore {title} &rarr;</span>
-          </a>
+  <!-- Link-in-bio hero -->
+  <section class="bio-hero">
+    <div class="bio-inner">
+      <img
+        src="/rr-logo.jpg"
+        alt="Redefining Retirement"
+        class="bio-logo"
+      />
+      <h1 class="bio-headline">Redefining Retirement</h1>
+      <p class="bio-sub">
+        Tools, guides, and resources for Gen X creators building audience-owned income —
+        the kind you never want to retire from.
+      </p>
+
+      <!-- Quick links -->
+      <ul class="link-list" role="list">
+        {quickLinks.map(({ label, href, external, icon }) => (
+          <li>
+            <a
+              href={href}
+              class="link-row"
+              target={external ? '_blank' : undefined}
+              rel={external ? 'noopener noreferrer' : undefined}
+            >
+              <span class="link-icon" aria-hidden="true">{icon}</span>
+              <span class="link-label">{label}</span>
+              <svg class="link-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="16" height="16" aria-hidden="true">
+                <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
+              </svg>
+            </a>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   </section>
 
-  <!-- Start Here -->
-  <section class="section">
+  <!-- Featured resources -->
+  <section class="section featured-section">
     <div class="container">
-      <span class="section-heading">Start Here</span>
-      <div class="card-grid">
+      <p class="section-heading">Featured Resources</p>
+      <div class="card-grid card-grid--3">
         {featured.map(({ tag, title, desc, href, cta }) => (
           <a href={href} class="card card--link">
             <span class="tag">{tag}</span>
@@ -120,83 +149,129 @@ const featured = [
     </div>
   </section>
 
-  <!-- Newsletter CTA -->
-  <section class="section section--alt">
+  <!-- Bridge back to main site -->
+  <section class="section">
     <div class="container">
       <div class="cta-block">
-        <div class="tape-label cta-tape">Gen eXit Playbook</div>
-        <h2>Build income that doesn't depend on the algorithm</h2>
+        <h2>The full newsletter and archive live on the main site</h2>
         <p>
-          The Redefining Retirement newsletter covers how Gen X creators and solopreneurs
-          are building audiences they own and income streams that compound.
-          No fluff. No retirement golf metaphors.
+          The full Redefining Retirement newsletter, archive, and bigger story still live on the main site.
+          Use this page to find your best next step fast — then head there when you're ready to go deeper.
         </p>
         <a
-          href="https://redefiningretirement.io/#subscribe"
-          class="btn btn-round"
+          href="https://redefiningretirement.io"
+          class="btn"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Get the Free Newsletter &rarr;
+          Go to RedefiningRetirement.io &rarr;
         </a>
-        <p class="cta-footnote">Join creators who are done building on rented land.</p>
+        <p class="cta-footnote">Newsletter · Archive · Podcast · Community</p>
       </div>
     </div>
   </section>
 </Layout>
 
 <style>
-  .hero {
-    background: var(--white);
-    padding: 4rem 0 3rem;
-    border-bottom: 1px solid var(--border);
+  /* ── Bio Hero ── */
+  .bio-hero {
+    background: var(--body-bg);
+    padding: 3rem 1.5rem 2rem;
+    display: flex;
+    justify-content: center;
   }
 
-  .hero-container {
+  .bio-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 560px;
+    width: 100%;
+    gap: 0;
+  }
+
+  .bio-logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 2px solid var(--border);
+  }
+
+  .bio-headline {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+  }
+
+  .bio-sub {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    max-width: 440px;
+    margin-bottom: 1.75rem;
+  }
+
+  /* ── Link List ── */
+  .link-list {
+    list-style: none;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .link-row {
     display: flex;
     align-items: center;
-    gap: 3rem;
+    gap: 12px;
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px 16px;
+    text-decoration: none;
+    color: var(--text);
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: box-shadow 0.15s, border-color 0.15s;
   }
 
-  .hero-inner {
-    flex: 1;
+  .link-row:hover {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+    border-color: var(--blue);
+    text-decoration: none;
+    color: var(--text);
   }
 
-  .hero-tape {
-    margin-bottom: 1rem;
-    display: inline-block;
-  }
-
-  .hero-headline {
-    font-size: clamp(2rem, 4.5vw, 2.8rem);
-    font-weight: 900;
-    color: var(--black);
-    margin-bottom: 1rem;
-    line-height: 1.1;
-  }
-
-  .hero-body {
-    color: var(--text-muted);
-    font-size: 1rem;
-    margin-bottom: 2rem;
-    line-height: 1.7;
-    max-width: 520px;
-  }
-
-  .hero-actions {
-    display: flex;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-  }
-
-  .hero-img {
+  .link-icon {
+    font-size: 1.1rem;
     flex-shrink: 0;
-    width: 260px;
+    line-height: 1;
   }
 
-  .hero-img img {
-    width: 100%;
-    height: auto;
+  .link-label {
+    flex: 1;
+    text-align: left;
+  }
+
+  .link-arrow {
+    color: var(--text-light);
+    flex-shrink: 0;
+    transition: color 0.15s;
+  }
+
+  .link-row:hover .link-arrow {
+    color: var(--blue);
+  }
+
+  /* ── Featured Section ── */
+  .featured-section {
+    background: var(--bg-subtle);
+    border-top: 1px solid var(--border);
   }
 
   .card--link {
@@ -208,15 +283,13 @@ const featured = [
   .card-link {
     display: inline-block;
     margin-top: 0.75rem;
-    font-size: 0.82rem;
-    font-weight: 700;
-    color: var(--blue-dark);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--blue);
   }
 
-  .cta-tape {
-    font-size: 1rem !important;
-    margin-bottom: 1rem;
-    display: inline-block;
+  .card-grid--3 {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   }
 
   .cta-footnote {
@@ -225,18 +298,13 @@ const featured = [
     color: var(--text-light);
   }
 
-  .btn-round {
-    border-radius: 20px;
-  }
-
-  @media (max-width: 768px) {
-    .hero-container {
-      flex-direction: column-reverse;
-      gap: 2rem;
+  @media (max-width: 640px) {
+    .bio-hero {
+      padding: 2rem 1.25rem 1.5rem;
     }
-    .hero-img {
-      width: 180px;
-      align-self: center;
+
+    .bio-headline {
+      font-size: 20px;
     }
   }
 </style>

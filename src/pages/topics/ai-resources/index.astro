@@ -49,7 +49,7 @@ const useCases = [
       </div>
 
       <div class="topic-header">
-        <span class="tape-label topic-tape">AI Resources</span>
+        <span class="tag">AI Resources</span>
         <p class="topic-intro">
           AI isn't going to replace your voice. But it will replace creators who refuse to use it.
           These resources are for Gen X solopreneurs who want to work smarter —
@@ -83,7 +83,7 @@ const useCases = [
           Get the newsletter and you'll see them first.
         </p>
         <a
-          href="https://redefiningretirement.io/#subscribe"
+          href="https://redefiningretirement.io/subscribe"
           class="btn"
           target="_blank"
           rel="noopener noreferrer"
@@ -107,7 +107,7 @@ const useCases = [
           One issue a week.
         </p>
         <a
-          href="https://redefiningretirement.io/#subscribe"
+          href="https://redefiningretirement.io/subscribe"
           class="btn"
           target="_blank"
           rel="noopener noreferrer"
@@ -124,40 +124,35 @@ const useCases = [
     margin-bottom: 2rem;
   }
 
-  .topic-tape {
-    margin-bottom: 1.25rem;
-    display: inline-block;
-  }
-
   .topic-intro {
-    color: #bbb;
+    color: var(--text-muted);
     font-size: 1.05rem;
     max-width: 640px;
     line-height: 1.65;
   }
 
   .callout {
-    background: rgba(0, 127, 255, 0.07);
+    background: rgba(9, 161, 231, 0.07);
     border-left: 3px solid var(--blue);
     padding: 1rem 1.25rem;
-    border-radius: 0 4px 4px 0;
+    border-radius: 0 var(--radius) var(--radius) 0;
     margin: 2rem 0;
     max-width: 640px;
   }
 
   .callout p {
-    color: #ccc;
+    color: var(--text-muted);
     font-size: 0.95rem;
     line-height: 1.6;
   }
 
   .callout strong {
-    color: var(--white);
+    color: var(--text);
   }
 
   .group-heading {
     font-size: 1.1rem;
-    color: var(--white);
+    color: var(--text);
     margin: 2rem 0 1rem;
     display: flex;
     align-items: center;
@@ -171,28 +166,33 @@ const useCases = [
   }
 
   .use-case-card {
-    background: var(--dark-gray);
-    border: 1px solid #2a2a2a;
-    border-radius: 6px;
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
     padding: 1.25rem;
+    transition: box-shadow 0.2s;
+  }
+
+  .use-case-card:hover {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
   }
 
   .use-case-card h3 {
     font-size: 0.95rem;
-    color: var(--white);
+    color: var(--text);
     margin-bottom: 0.4rem;
   }
 
   .use-case-card p {
     font-size: 0.875rem;
-    color: #999;
+    color: var(--text-muted);
     line-height: 1.55;
   }
 
   .coming-soon {
-    background: var(--dark-gray);
-    border: 1px solid #2a2a2a;
-    border-radius: 8px;
+    background: var(--bg-subtle);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
     padding: 2rem;
     margin: 2.5rem 0;
     max-width: 560px;
@@ -201,10 +201,11 @@ const useCases = [
   .coming-soon h2 {
     font-size: 1.15rem;
     margin-bottom: 0.5rem;
+    color: var(--text);
   }
 
   .coming-soon p {
-    color: #999;
+    color: var(--text-muted);
     font-size: 0.9rem;
     margin-bottom: 1.25rem;
     line-height: 1.6;
@@ -213,13 +214,13 @@ const useCases = [
   .topic-related {
     margin: 3rem 0;
     padding-top: 2rem;
-    border-top: 1px solid #222;
+    border-top: 1px solid var(--border);
   }
 
   .topic-related h3 {
     font-size: 0.9rem;
-    color: #888;
-    font-family: var(--font-display);
+    color: var(--text-light);
+    font-family: var(--font);
     text-transform: uppercase;
     letter-spacing: 0.06em;
     margin-bottom: 0.75rem;
@@ -232,7 +233,7 @@ const useCases = [
   }
 
   .related-links a {
-    font-family: var(--font-display);
+    font-family: var(--font);
     font-weight: 700;
     font-size: 0.9rem;
     color: var(--blue);
