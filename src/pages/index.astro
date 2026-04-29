@@ -14,54 +14,30 @@ const schema = {
   }
 };
 
-const quickLinks = [
+const pathways = [
   {
-    label: 'Subscribe to the Newsletter',
-    href: 'https://redefiningretirement.io/subscribe',
-    external: true,
-    icon: '✉️',
+    label: 'Retirement Income Ideas',
+    desc: 'Ways to build income streams that don\'t depend on a paycheck.',
+    href: '/topics/newsletters/',
+    icon: '💰',
   },
   {
-    label: 'Browse All Resources',
-    href: '/resources/',
-    external: false,
-    icon: '📚',
-  },
-  {
-    label: 'Beehiiv vs. Substack — Full Comparison',
-    href: '/compare/beehiiv-vs-substack/',
-    external: false,
-    icon: '⚖️',
-  },
-  {
-    label: 'Move Your Audience to a Newsletter',
-    href: '/guides/move-your-audience-to-a-newsletter/',
-    external: false,
-    icon: '🗺️',
-  },
-  {
-    label: 'Creator Tools Stack',
+    label: 'Working in Retirement',
+    desc: 'How to keep working — just on your own terms.',
     href: '/topics/creator-tools/',
-    external: false,
     icon: '🛠️',
   },
   {
-    label: 'AI Resources for Creators',
-    href: '/topics/ai-resources/',
-    external: false,
-    icon: '🤖',
+    label: 'Downsizing & Lifestyle Design',
+    desc: 'Rethinking where you live, what you own, and what you need.',
+    href: '/resources/',
+    icon: '🏡',
   },
   {
-    label: 'Newsletter Platform Reviews',
-    href: '/topics/newsletters/',
-    external: false,
-    icon: '📰',
-  },
-  {
-    label: 'Listen to the Podcast',
-    href: 'https://redefiningretirement.io/podcast',
-    external: true,
-    icon: '🎙️',
+    label: 'Tools & Practical Guides',
+    desc: 'Side-by-side comparisons, guides, and decision frameworks.',
+    href: '/resources/',
+    icon: '📋',
   },
 ];
 
@@ -92,50 +68,102 @@ const featured = [
 
 <Layout
   title="Start Here | Redefining Retirement"
-  description="Tools, guides, comparisons, and newsletter resources for Gen X creators building audience-owned income. The best place to start."
+  description="Tools, guides, and resources for Gen X creators building work they never want to retire from. The best place to start."
   schema={schema}
 >
 
-  <!-- Link-in-bio hero -->
-  <section class="bio-hero">
-    <div class="bio-inner">
-      <img
-        src="/rr-logo.jpg"
-        alt="Redefining Retirement"
-        class="bio-logo"
-      />
-      <h1 class="bio-headline">Redefining Retirement</h1>
-      <p class="bio-sub">
-        Tools, guides, and resources for Gen X creators building audience-owned income —
-        the kind you never want to retire from.
-      </p>
-
-      <!-- Quick links -->
-      <ul class="link-list" role="list">
-        {quickLinks.map(({ label, href, external, icon }) => (
-          <li>
-            <a
-              href={href}
-              class="link-row"
-              target={external ? '_blank' : undefined}
-              rel={external ? 'noopener noreferrer' : undefined}
-            >
-              <span class="link-icon" aria-hidden="true">{icon}</span>
-              <span class="link-label">{label}</span>
-              <svg class="link-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="16" height="16" aria-hidden="true">
-                <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
-              </svg>
-            </a>
-          </li>
-        ))}
-      </ul>
+  <!-- SECTION 1: Hero -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-photo">
+        <img
+          src="/images/corey-portrait.jpg"
+          alt="Corey Koehler — Redefining Retirement"
+          class="portrait"
+        />
+      </div>
+      <div class="hero-content">
+        <p class="section-heading">Start Here</p>
+        <h1>I never planned to retire. I planned to stop needing to.</h1>
+        <p class="hero-sub">
+          I'm Corey. Blue-collar kid, Class of '90, singer-songwriter, accidental entrepreneur.
+          I've reinvented myself more times than I can count and I'm still going.
+          This is where I share what I've figured out along the way.
+        </p>
+        <div class="hero-ctas">
+          <a href="https://redefiningretirement.io/subscribe" class="btn" target="_blank" rel="noopener noreferrer">
+            Join the newsletter — free
+          </a>
+          <a href="/resources/" class="btn btn--outline">Browse the resources</a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Featured resources -->
+  <!-- SECTION 2: Philosophy / About -->
+  <section class="section about-section">
+    <div class="container">
+      <div class="about-inner">
+        <p class="section-heading">How I think about this</p>
+        <h2 class="about-heading">Retirement isn't the finish line. It's just when you stop having to ask permission.</h2>
+        <div class="about-body">
+          <p class="about-lead">
+            I grew up a latchkey kid in the 80s. Nobody was managing my afternoon. That kind of
+            independence gets into your blood.
+          </p>
+
+          <p>
+            I spent years doing what you're supposed to do. Punched the clock, built the skills,
+            showed up. Then I started figuring something out.
+          </p>
+          <p>
+            If you build the right kind of work — work that generates income whether you're at your
+            desk or not — you get to choose whether you retire. That's a completely different thing
+            than saving enough to survive stopping.
+          </p>
+          <p>
+            Build once, earn twice. Three times. Ten times. Email lists, newsletters, digital assets.
+            Things you create one time that keep paying. The music analogy I always come back to:
+            you record a song once and people can listen to it forever. That's the model.
+          </p>
+
+          <p class="about-closer">
+            I'm not here because I figured it all out at 30. I'm figuring it out at 51, same as
+            you. Blue-collar to cubicle to Company of One. If I can do it, you can too.
+          </p>
+        </div>
+        <div class="about-byline">
+          <img src="/images/corey-portrait.jpg" alt="Corey Koehler" class="byline-photo" />
+          <span class="byline-name">Corey Koehler</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: Start Here Pathways -->
+  <section class="section pathways-section">
+    <div class="container">
+      <p class="section-heading">Where do you want to start?</p>
+      <h2 class="section-title">Start Here</h2>
+      <div class="pathways-grid">
+        {pathways.map(({ label, desc, href, icon }) => (
+          <a href={href} class="pathway-card">
+            <span class="pathway-icon">{icon}</span>
+            <h3>{label}</h3>
+            <p>{desc}</p>
+            <span class="pathway-cta">Explore &rarr;</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: Featured Resources -->
   <section class="section featured-section">
     <div class="container">
-      <p class="section-heading">Featured Resources</p>
+      <p class="section-heading">Useful things</p>
+      <h2 class="section-title">Resources Worth Bookmarking</h2>
+      <p class="section-desc">Comparison guides, frameworks, and practical tools — picked for clarity, not clicks.</p>
       <div class="card-grid card-grid--3">
         {featured.map(({ tag, title, desc, href, cta }) => (
           <a href={href} class="card card--link">
@@ -146,17 +174,22 @@ const featured = [
           </a>
         ))}
       </div>
+      <p class="section-footer-link"><a href="/resources/">See all guides &rarr;</a></p>
     </div>
   </section>
 
-  <!-- Bridge back to main site -->
-  <section class="section">
+  <!-- SECTION 5: Bridge to Main Site -->
+  <section class="section bridge-section">
     <div class="container">
       <div class="cta-block">
-        <h2>The full newsletter and archive live on the main site</h2>
+        <p class="section-heading">The full picture</p>
+        <h2>More on RedefiningRetirement.io</h2>
         <p>
-          The full Redefining Retirement newsletter, archive, and bigger story still live on the main site.
-          Use this page to find your best next step fast — then head there when you're ready to go deeper.
+          This site is the resource hub — guides, comparisons, and tools you can browse and bookmark.
+          The newsletter and main editorial home lives at RedefiningRetirement.io. That's where I
+          publish deeper thinking, reader questions, and the ongoing conversation about what
+          retirement can actually look like for people like us. If this is your first visit,
+          that's the best place to go next.
         </p>
         <a
           href="https://redefiningretirement.io"
@@ -164,114 +197,209 @@ const featured = [
           target="_blank"
           rel="noopener noreferrer"
         >
-          Go to RedefiningRetirement.io &rarr;
+          Visit RedefiningRetirement.io &rarr;
         </a>
-        <p class="cta-footnote">Newsletter · Archive · Podcast · Community</p>
+        <p class="cta-footnote">Free newsletter. No pitch. Unsubscribe anytime.</p>
       </div>
     </div>
   </section>
+
 </Layout>
 
 <style>
-  /* ── Bio Hero ── */
-  .bio-hero {
-    background: var(--body-bg);
-    padding: 3rem 1.5rem 2rem;
-    display: flex;
-    justify-content: center;
+  /* ── Hero ── */
+  .hero {
+    padding: 4rem 0 3rem;
+    border-bottom: 1px solid var(--border);
   }
 
-  .bio-inner {
-    display: flex;
-    flex-direction: column;
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 3.5rem;
     align-items: center;
-    text-align: center;
-    max-width: 560px;
-    width: 100%;
-    gap: 0;
   }
 
-  .bio-logo {
-    width: 80px;
-    height: 80px;
+  .hero-photo {
+    flex-shrink: 0;
+  }
+
+  .portrait {
+    width: 100%;
+    max-width: 280px;
+    border-radius: var(--radius);
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+    border: 1px solid var(--border);
+  }
+
+  .hero-content h1 {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 1.75rem;
+    max-width: 520px;
+  }
+
+  .hero-ctas {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+/* ── About ── */
+  .about-section {
+    background: var(--bg-subtle);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .about-inner {
+    max-width: 680px;
+  }
+
+  .about-heading {
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+    margin-bottom: 1.5rem;
+    margin-top: 0.5rem;
+    line-height: 1.3;
+  }
+
+  .about-body p {
+    margin-bottom: 1rem;
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .about-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  .about-lead {
+    font-size: 1.1rem;
+    color: var(--text);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-closer {
+    font-size: 1.05rem;
+    color: var(--text);
+    font-weight: 500;
+    margin-top: 0.5rem;
+  }
+
+  .about-byline {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 1.75rem;
+  }
+
+  .byline-photo {
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 1rem;
-    border: 2px solid var(--border);
+    object-position: top;
+    border: 1px solid var(--border);
+    flex-shrink: 0;
   }
 
-  .bio-headline {
-    font-size: 22px;
-    font-weight: 700;
-    color: var(--text);
-    margin-bottom: 0.5rem;
-    line-height: 1.2;
-  }
-
-  .bio-sub {
+  .byline-name {
     font-size: 0.95rem;
-    color: var(--text-muted);
-    line-height: 1.6;
-    max-width: 440px;
-    margin-bottom: 1.75rem;
+    font-weight: 600;
+    color: var(--text);
   }
 
-  /* ── Link List ── */
-  .link-list {
-    list-style: none;
-    width: 100%;
+  /* ── Section titles ── */
+  .section-title {
+    margin-bottom: 0.5rem;
+    margin-top: 0.25rem;
+  }
+
+  .section-desc {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1.75rem;
+    max-width: 540px;
+  }
+
+  .section-footer-link {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  /* ── Pathways ── */
+  .pathways-section {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .pathways-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 14px;
+    margin-top: 1.5rem;
+  }
+
+  .pathway-card {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-  }
-
-  .link-row {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+    gap: 0.4rem;
     background: #ffffff;
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    padding: 14px 16px;
+    padding: 1.5rem;
     text-decoration: none;
-    color: var(--text);
-    font-size: 0.95rem;
-    font-weight: 500;
-    transition: box-shadow 0.15s, border-color 0.15s;
+    color: inherit;
+    transition: box-shadow 0.2s, border-color 0.2s;
   }
 
-  .link-row:hover {
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+  .pathway-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
     border-color: var(--blue);
     text-decoration: none;
-    color: var(--text);
   }
 
-  .link-icon {
-    font-size: 1.1rem;
-    flex-shrink: 0;
+  .pathway-icon {
+    font-size: 1.5rem;
     line-height: 1;
+    margin-bottom: 0.25rem;
   }
 
-  .link-label {
+  .pathway-card h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.3;
+  }
+
+  .pathway-card p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.5;
     flex: 1;
-    text-align: left;
   }
 
-  .link-arrow {
-    color: var(--text-light);
-    flex-shrink: 0;
-    transition: color 0.15s;
-  }
-
-  .link-row:hover .link-arrow {
+  .pathway-cta {
+    font-size: 0.82rem;
+    font-weight: 600;
     color: var(--blue);
+    margin-top: 0.5rem;
   }
 
-  /* ── Featured Section ── */
+  /* ── Featured ── */
   .featured-section {
     background: var(--bg-subtle);
-    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
   }
 
   .card--link {
@@ -292,19 +420,67 @@ const featured = [
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   }
 
+  /* ── Bridge ── */
+  .bridge-section {
+    background: var(--body-bg);
+  }
+
   .cta-footnote {
     margin-top: 0.75rem;
     font-size: 0.8rem;
     color: var(--text-light);
   }
 
-  @media (max-width: 640px) {
-    .bio-hero {
-      padding: 2rem 1.25rem 1.5rem;
+  /* ── Responsive ── */
+  @media (max-width: 768px) {
+    .hero-inner {
+      grid-template-columns: 1fr;
+      gap: 2rem;
     }
 
-    .bio-headline {
-      font-size: 20px;
+    .portrait {
+      max-width: 180px;
+    }
+
+    .hero-photo {
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-content {
+      text-align: center;
+    }
+
+    .hero-sub {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-ctas {
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hero-ctas .btn {
+      width: 100%;
+      max-width: 320px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .hero {
+      padding: 2.5rem 0 2rem;
+    }
+
+    .pathways-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 420px) {
+    .pathways-grid {
+      grid-template-columns: 1fr;
     }
   }
 </style>

@@ -1,8 +1,8 @@
-# rr-go — go.redefiningretirement.io
+# rr-start — start.redefiningretirement.io
 
 Resource hub for RedefiningRetirement.io — guides, comparisons, and tools for Gen X creators and solopreneurs building audiences they own.
 
-**Live URL:** https://go.redefiningretirement.io
+**Live URL:** https://start.redefiningretirement.io
 **Main site:** https://redefiningretirement.io
 
 ## Stack
@@ -36,7 +36,7 @@ Dev server runs at `http://localhost:4321`
 
 ### First-time setup
 
-1. Push this repo to GitHub as `coreykmedia/rr-go` (or similar)
+1. Push this repo to GitHub as `coreykmedia/rr-start`
 2. Go to [vercel.com](https://vercel.com) → Add New Project → Import the repo
 3. Framework preset: **Astro** (Vercel auto-detects)
 4. Click Deploy
@@ -44,10 +44,10 @@ Dev server runs at `http://localhost:4321`
 ### Add the custom domain
 
 1. In Vercel project → Settings → Domains
-2. Add `go.redefiningretirement.io`
+2. Add `start.redefiningretirement.io`
 3. Vercel will give you a CNAME record to add in your DNS
 4. In your DNS provider (wherever redefiningretirement.io DNS is managed):
-   - Add a CNAME record: `go` → `cname.vercel-dns.com`
+   - Add a CNAME record: `start` → `cname.vercel-dns.com`
 5. Wait for DNS to propagate (usually under 30 minutes)
 
 ### Ongoing deploys
