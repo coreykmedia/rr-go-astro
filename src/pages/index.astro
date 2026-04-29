@@ -16,52 +16,48 @@ const schema = {
 
 const pathways = [
   {
-    label: 'Retirement Income Ideas',
-    desc: 'Ways to build income streams that don\'t depend on a paycheck.',
-    href: '/topics/newsletters/',
-    icon: '💰',
+    label: 'Newsletter Resources',
+    desc: 'Platform comparisons, growth strategies, and monetization guides for building an email audience you actually own.',
+    href: 'https://redefiningretirement.io/p/how-to-monetize-a-newsletter-2025-gen-x-creators-income-guide?utm_source=start-here&utm_medium=referral&utm_campaign=start-page',
   },
   {
-    label: 'Working in Retirement',
-    desc: 'How to keep working — just on your own terms.',
-    href: '/topics/creator-tools/',
-    icon: '🛠️',
+    label: 'Solopreneur Tools',
+    desc: 'The software stack that actually matters — newsletter platforms, podcast gear, AI tools, and more.',
+    href: 'https://redefiningretirement.io/c/solopreneur-business-resources-tools-courses?utm_source=start-here&utm_medium=referral&utm_campaign=start-page',
   },
   {
-    label: 'Downsizing & Lifestyle Design',
-    desc: 'Rethinking where you live, what you own, and what you need.',
-    href: '/resources/',
-    icon: '🏡',
+    label: 'AI Newsletter Fast Track',
+    desc: 'A step-by-step guide to using AI to build and grow a newsletter faster than going it alone.',
+    href: 'https://redefiningretirement.io/p/ai-newsletter-fast-track-step-by-step-guide?utm_source=start-here&utm_medium=referral&utm_campaign=start-page',
   },
   {
-    label: 'Tools & Practical Guides',
-    desc: 'Side-by-side comparisons, guides, and decision frameworks.',
-    href: '/resources/',
-    icon: '📋',
+    label: 'Gen Exit Playbook',
+    desc: 'Free strategy guide for Gen X — how to build income and independence before you have to retire.',
+    href: 'https://redefiningretirement.io/c/gen-exit-playbook?utm_source=start-here&utm_medium=referral&utm_campaign=start-page',
   },
 ];
 
 const featured = [
   {
     tag: 'Comparison',
-    title: 'Beehiiv vs. Substack for creators who want more control',
-    desc: 'A practical comparison for creators who want more ownership, better monetization options, and room to grow.',
-    href: '/compare/beehiiv-vs-substack/',
+    title: 'Beehiiv vs. Substack: An Honest Breakdown',
+    desc: 'The real differences in pricing, monetization, and who each platform is actually built for — without the affiliate spin.',
+    href: 'https://redefiningretirement.io/p/beehiiv-vs-substack-newsletter-platform-comparison?utm_source=start-here&utm_medium=referral&utm_campaign=start-page',
     cta: 'Read the comparison &rarr;',
   },
   {
     tag: 'Guide',
-    title: 'How to move your audience off social and onto a newsletter',
-    desc: 'A plain-English guide to turning rented attention into an audience you actually own.',
-    href: '/guides/move-your-audience-to-a-newsletter/',
+    title: 'LinkedIn Newsletter vs. Email Newsletter',
+    desc: 'You don\'t own your LinkedIn audience. Here\'s what that actually means — and what to do about it.',
+    href: 'https://redefiningretirement.io/p/linkedin-newsletter-vs-email-newsletter?utm_source=start-here&utm_medium=referral&utm_campaign=start-page',
     cta: 'Read the guide &rarr;',
   },
   {
-    tag: 'Tools',
-    title: 'My creator tools stack for newsletters, podcasting, and YouTube',
-    desc: 'The handful of tools I use, test, or recommend to make content creation and distribution easier.',
-    href: '/topics/creator-tools/',
-    cta: 'See the stack &rarr;',
+    tag: 'Guide',
+    title: 'How to Monetize a Newsletter in 2025',
+    desc: 'Six income streams Gen X creators are using to turn an email list into real recurring revenue.',
+    href: 'https://redefiningretirement.io/p/how-to-monetize-a-newsletter-2025-gen-x-creators-income-guide?utm_source=start-here&utm_medium=referral&utm_campaign=start-page',
+    cta: 'Read the guide &rarr;',
   },
 ];
 ---
@@ -146,9 +142,8 @@ const featured = [
       <p class="section-heading">Where do you want to start?</p>
       <h2 class="section-title">Start Here</h2>
       <div class="pathways-grid">
-        {pathways.map(({ label, desc, href, icon }) => (
-          <a href={href} class="pathway-card">
-            <span class="pathway-icon">{icon}</span>
+        {pathways.map(({ label, desc, href }) => (
+          <a href={href} class="pathway-card" target="_blank" rel="noopener noreferrer">
             <h3>{label}</h3>
             <p>{desc}</p>
             <span class="pathway-cta">Explore &rarr;</span>
@@ -166,7 +161,7 @@ const featured = [
       <p class="section-desc">Comparison guides, frameworks, and practical tools — picked for clarity, not clicks.</p>
       <div class="card-grid card-grid--3">
         {featured.map(({ tag, title, desc, href, cta }) => (
-          <a href={href} class="card card--link">
+          <a href={href} class="card card--link" target="_blank" rel="noopener noreferrer">
             <span class="tag">{tag}</span>
             <h3>{title}</h3>
             <p>{desc}</p>
@@ -367,12 +362,6 @@ const featured = [
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
     border-color: var(--blue);
     text-decoration: none;
-  }
-
-  .pathway-icon {
-    font-size: 1.5rem;
-    line-height: 1;
-    margin-bottom: 0.25rem;
   }
 
   .pathway-card h3 {
